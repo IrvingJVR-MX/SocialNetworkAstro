@@ -14,10 +14,7 @@ class TabBarViewController: UIViewController {
         vcAddFriends.title = "Add Friends"
         let vcProfile = ProfileViewController()
         vcProfile.title = "Profile"
-        
         tabBarVC.setViewControllers([vcHome,vcNewPost,vcAddFriends,vcProfile], animated: false)
-        
-        
         guard let items = tabBarVC.tabBar.items else { return }
         let images = ["house", "plus.app.fill","person.fill.badge.plus", "person.fill"]
         for x in 0..<items.count{

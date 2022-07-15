@@ -1,5 +1,4 @@
 import UIKit
-import FirebaseAuth
 class LoginViewController: UIViewController {
 
     let login = Login ()
@@ -7,14 +6,19 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
-    let firebaseManager = FirebaseManager.shared
     override func viewDidLoad() {
         super.viewDidLoad()
         login.authLogin = { [weak self] () in
             self?.authenticationFinished()
         }
+        
     }
-    
+    override func loadView() {
+        login.checkIfUserIsLoginIn()
+        login.authLogin = { [weak self] () in
+            self?.authenticationFinished()
+        }
+     }
 
     @IBAction func signInButtonAction(_ sender: Any) {
         if let email = emailTextField.text , let password = passwordTextField.text , !email.isEmpty, !password.isEmpty {

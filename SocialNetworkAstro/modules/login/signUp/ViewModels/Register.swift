@@ -26,7 +26,7 @@ public class Register {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY/MM/dd"
-        let user = User(id: userId, name: userName, email: email, createdAt: dateFormatter.string(from: date))
+        let user = UserF(id: userId, name: userName, email: email, createdAt: dateFormatter.string(from: date))
         firebaseManager.addDocument(document: user, collection: .Users) { result in
             switch result {
             case .success:
