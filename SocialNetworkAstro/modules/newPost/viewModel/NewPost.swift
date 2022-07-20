@@ -17,16 +17,16 @@ public class NewPost {
     let firebaseManager = FirebaseManager.shared
     let db = Firestore.firestore()
     var imageURL: String = ""
-    
+    var postId: String = ""
     func savePhoto(_ title:String, _ description:String){
-        let date = NSDate()
+        postId = db.collection("Post").document().documentID
         guard let imageDataStorage = imageData else{ return }
-        storage.child(userID + "/PhotoOfPublicacions/"+title+"\(date).png").putData(imageDataStorage, metadata: nil, completion: { _, error in
+        storage.child(userID + "/PhotoOfPublicacions/"+postId+".png").putData(imageDataStorage, metadata: nil, completion: { _, error in
             guard error == nil else{
                 print("Failed")
                 return
             }
-            self.storage.child(self.userID + "/PhotoOfPublicacions/"+title+"\(date).png").downloadURL(completion: { url, error in
+            self.storage.child(self.userID + "/PhotoOfPublicacions/"+self.postId+".png").downloadURL(completion: { url, error in
                            guard let url = url, error == nil else{
                                return
                            }
@@ -37,7 +37,7 @@ public class NewPost {
     func createPost (_ title:String, _ description:String, _ photoURL:String) {
         let timestamp = NSDate().timeIntervalSince1970
         let city = PostF(title: title, description: description, userID: userID , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp)
-        db.collection("Post").document().setData(city.dictionary, completion: { error in
+        db.collection("Post").document(postId).setData(city.dictionary, completion: { error in
             if error == nil{
                 self.posted = true
             } else{
