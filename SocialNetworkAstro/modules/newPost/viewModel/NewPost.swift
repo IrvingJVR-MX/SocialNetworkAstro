@@ -14,7 +14,6 @@ public class NewPost {
     let storage = Storage.storage().reference()
     var imageData: Data?
     var userID: String =  ""
-    let firebaseManager = FirebaseManager.shared
     let db = Firestore.firestore()
     var imageURL: String = ""
     var postId: String = ""
