@@ -30,6 +30,12 @@ extension HomeViewController:  UITableViewDataSource, UITableViewDelegate {
         return homeViewModel.post.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let postDetailView = PostDetailViewController()
+        postDetailView.post = homeViewModel.post[indexPath.row]
+        show(postDetailView, sender: nil)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell ?? HomeTableViewCell(style: .subtitle, reuseIdentifier: "HomeTableViewCell")
         cell.titleLabel.text = homeViewModel.post[indexPath.row].title
