@@ -13,12 +13,12 @@ class LoginViewController: UIViewController {
         }
         
     }
-    override func loadView() {
+    override func viewWillAppear(_ animated: Bool) {
         login.checkIfUserIsLoginIn()
         login.authLogin = { [weak self] () in
             self?.authenticationFinished()
         }
-     }
+    }
 
     @IBAction func signInButtonAction(_ sender: Any) {
         if let email = emailTextField.text , let password = passwordTextField.text , !email.isEmpty, !password.isEmpty {

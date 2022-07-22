@@ -47,9 +47,12 @@ public class Login {
          let fetchRequest = NSFetchRequest<User>(entityName: "User")
          do{
              let dbUser = try context.fetch(fetchRequest)
-             if let userId = dbUser[0].userid, !userId.isEmpty {
-                 self.userID = userId
+             if dbUser.isEmpty == false {
+                 self.userID = dbUser[0].userid ?? ""
              }
+             /*if let userId = dbUser[0].userid, !userId.isEmpty {
+                 self.userID = userId
+             }*/
          }catch(let error){
              print ("error", error)
          }

@@ -9,6 +9,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
         let uniNib =  UINib(nibName: "HomeTableViewCell", bundle: nil)
         tableView.register(uniNib, forCellReuseIdentifier: "HomeTableViewCell")
         homeViewModel.fecthData()
@@ -39,7 +41,47 @@ extension HomeViewController:  UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+extension HomeViewController : UISearchBarDelegate{
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+         searchBar.text = ""
+         homeViewModel.post = homeViewModel.originalPostList
+         tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            homeViewModel.post = homeViewModel.originalPostList
+            tableView.reloadData()
+        }else {
+            search(searchBar.text ?? "")
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search(searchBar.text ??  "")
+    }
+    
+}
 
+extension HomeViewController {
+    func search(_ searchText: String){
+        homeViewModel.filterPost(searchText)
+        if homeViewModel.post.isEmpty == true {
+            let alert = UIAlertController(title: "Not found", message: "No name coincidence \(searchText)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.searchBar.text = ""
+                self.homeViewModel.post = self.homeViewModel.originalPostList
+                self.tableView.reloadData()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            tableView.reloadData()
+            
+        }
+    }
+    
+}
 
 extension UIImageView{
     func load(url: URL){

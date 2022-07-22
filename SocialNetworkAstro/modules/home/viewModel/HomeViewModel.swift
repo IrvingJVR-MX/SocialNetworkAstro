@@ -4,6 +4,7 @@ import FirebaseFirestoreSwift
 public class HomeViewModel {
     var db = Firestore.firestore()
     var post = [PostF]()
+    var originalPostList =  [PostF]()
     var notifyFetchedPost = { () -> () in}
     var fetched : Bool = false {
         didSet {
@@ -20,7 +21,13 @@ public class HomeViewModel {
             self.post = documents.compactMap{ (QueryDocumentSnapshot) -> PostF? in
                 return try? QueryDocumentSnapshot.data(as: PostF.self)
             }
+            self.originalPostList = self.post
             self.fetched = true
         }
     }
+    
+    func filterPost(_ title :String){
+        post = post.filter({$0.title.lowercased().contains(title.lowercased())})
+    }
+    
 }
