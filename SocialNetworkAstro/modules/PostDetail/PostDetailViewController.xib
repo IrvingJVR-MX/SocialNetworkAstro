@@ -79,6 +79,9 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                            <connections>
+                                <action selector="sendComment:" destination="-1" eventType="touchUpInside" id="be2-7h-xzi"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

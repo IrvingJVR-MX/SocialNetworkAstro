@@ -20,7 +20,7 @@ class PostDetailViewController: UIViewController {
         }
         descriptionLabel.text = post?.description
         
-        postDetailViewModel.fecthData()
+        postDetailViewModel.fecthData(post?.postId ?? "")
         postDetailViewModel.notifyFetchedPost = { [weak self] () in
             if self?.postDetailViewModel.fetched == true {
                 self?.tableView.reloadData()
@@ -28,6 +28,12 @@ class PostDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func sendComment(_ sender: Any) {
+        if let comment = commentTextField.text, comment.isEmpty == false {
+            postDetailViewModel.createComment(post?.postId ?? "", comment)
+            commentTextField.text =  ""
+        }
+    }
 }
 
 extension PostDetailViewController:  UITableViewDataSource, UITableViewDelegate {
@@ -39,7 +45,11 @@ extension PostDetailViewController:  UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetailTableViewCell") as? PostDetailTableViewCell ?? PostDetailTableViewCell (style: .subtitle, reuseIdentifier: "PostDetailTableViewCell")
-        cell.label.text = postDetailViewModel.post[indexPath.row].one
+        cell.profileNameLabel.text = postDetailViewModel.post[indexPath.row].profileName
+        cell.commentLabel.text = postDetailViewModel.post[indexPath.row].comment
+        if let url = URL (string: postDetailViewModel.post[indexPath.row].profilePhotoUrl){
+            cell.profileImageView.load(url: url)
+        }
         return cell
     }
 }

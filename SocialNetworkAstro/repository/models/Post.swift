@@ -2,8 +2,10 @@ import Foundation
 
 
 public struct PostF: Codable {
-
+    let postId: String
     let title: String
+    let profileName : String
+    let profilePhotoUrl: String
     let description: String?
     let userID: String?
     let photoURL: String?
@@ -11,7 +13,10 @@ public struct PostF: Codable {
     let CreatedAt: TimeInterval
 
     enum CodingKeys: String, CodingKey {
+        case postId
         case title
+        case profileName
+        case profilePhotoUrl
         case description
         case userID
         case photoURL

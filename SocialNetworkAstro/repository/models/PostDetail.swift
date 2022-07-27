@@ -1,12 +1,14 @@
 import Foundation
 public struct PostDetailF: Codable {
 
-    let one: String
-    let two: String
+    let profilePhotoUrl: String
+    let profileName: String
+    let comment : String
     
     enum CodingKeys: String, CodingKey {
-        case one
-        case two
+        case profilePhotoUrl
+        case profileName
+        case comment
     }
     var dictionary: [String: Any] {
             let data = (try? JSONEncoder().encode(self)) ?? Data()

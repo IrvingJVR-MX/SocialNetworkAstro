@@ -10,7 +10,7 @@ class TabBarViewController: UIViewController {
         vcHome.title =  "Home"
         let vcNewPost = NewPostViewController()
         vcNewPost.title = "New Post"
-        let vcAddFriends = AddFriendsViewController()
+        let vcAddFriends = AddFriendViewController()
         vcAddFriends.title = "Add Friends"
         let vcProfile = ProfileViewController()
         vcProfile.title = "Profile"

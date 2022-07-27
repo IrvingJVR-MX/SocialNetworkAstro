@@ -1,16 +1,15 @@
 import Foundation
 
-public struct UserF: Codable {
-    let id: String
+
+public struct userFollowedDetail : Codable {
+    let id : String
     let name: String
-    let email: String
-    let createdAt: String
+    let profilePhotoUrl: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case email
-        case createdAt
+        case profilePhotoUrl
     }
 
     var dictionary: [String: Any] {
@@ -18,4 +17,3 @@ public struct UserF: Codable {
             return (try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]) ?? [:]
         }
 }
-

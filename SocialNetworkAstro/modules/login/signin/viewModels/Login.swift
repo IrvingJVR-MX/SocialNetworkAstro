@@ -50,9 +50,6 @@ public class Login {
              if dbUser.isEmpty == false {
                  self.userID = dbUser[0].userid ?? ""
              }
-             /*if let userId = dbUser[0].userid, !userId.isEmpty {
-                 self.userID = userId
-             }*/
          }catch(let error){
              print ("error", error)
          }

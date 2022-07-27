@@ -56,8 +56,8 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="oP9-hE-IB9"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo0-5W-bQp">
-                        <rect key="frame" x="7" y="442.5" width="360" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo0-5W-bQp">
+                        <rect key="frame" x="7" y="443" width="360" height="47"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                     <constraint firstItem="sru-vk-xoU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="7h3-O2-Kde"/>
                     <constraint firstItem="v4t-Pj-Dam" firstAttribute="leading" secondItem="I3i-8I-hag" secondAttribute="trailing" constant="8" id="A4h-FZ-wGE"/>
                     <constraint firstItem="v4t-Pj-Dam" firstAttribute="leading" secondItem="I3i-8I-hag" secondAttribute="trailing" constant="8" id="DVS-Rh-wVz"/>
-                    <constraint firstAttribute="bottom" secondItem="Jo0-5W-bQp" secondAttribute="bottom" constant="58" id="H0A-1E-b8E"/>
+                    <constraint firstAttribute="bottom" secondItem="Jo0-5W-bQp" secondAttribute="bottom" constant="31" id="H0A-1E-b8E"/>
                     <constraint firstItem="bEY-K7-jio" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="7" id="HUx-Qw-Raz"/>
                     <constraint firstAttribute="trailing" secondItem="bEY-K7-jio" secondAttribute="trailing" constant="218" id="Iqw-lp-i6D"/>
                     <constraint firstItem="sru-vk-xoU" firstAttribute="top" secondItem="ywp-np-7bk" secondAttribute="bottom" constant="15" id="OQk-jd-NMy"/>

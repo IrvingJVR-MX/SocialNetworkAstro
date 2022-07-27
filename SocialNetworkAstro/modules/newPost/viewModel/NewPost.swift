@@ -35,7 +35,7 @@ public class NewPost {
     }
     func createPost (_ title:String, _ description:String, _ photoURL:String) {
         let timestamp = NSDate().timeIntervalSince1970
-        let city = PostF(title: title, description: description, userID: userID , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp)
+        let city = PostF(postId: postId, title: title, profileName: "" , profilePhotoUrl: "" , description: description, userID: userID , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp)
         db.collection("Post").document(postId).setData(city.dictionary, completion: { error in
             if error == nil{
                 self.posted = true

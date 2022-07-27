@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
         homeViewModel.fecthData()
         homeViewModel.notifyFetchedPost = { [weak self] () in
             if self?.homeViewModel.fetched == true {
-                self?.tableView.reloadData()
+               self?.tableView.reloadData()
             }
         }
     }
