@@ -38,9 +38,13 @@ extension HomeViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell ?? HomeTableViewCell(style: .subtitle, reuseIdentifier: "HomeTableViewCell")
-        cell.titleLabel.text = homeViewModel.post[indexPath.row].title
-        cell.descriptionLabel.text = homeViewModel.post[indexPath.row].description
-        if let url = URL (string: homeViewModel.post[indexPath.row].photoURL ?? "" ){
+        if let url = URL (string: homeViewModel.post[indexPath.row].profilePhotoUrl){
+            cell.profilePhotoImageVIew.load(url: url)
+        }
+        cell.profileNameLabel.text = homeViewModel.post[indexPath.row].profileName
+        cell.titleLabel.text = homeViewModel.post[indexPath.row].postTitle
+        cell.descriptionTextView.text = homeViewModel.post[indexPath.row].description
+        if let url = URL (string: homeViewModel.post[indexPath.row].photoURL){
             cell.postImageView.load(url: url)
         }
         return cell

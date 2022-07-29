@@ -44,6 +44,9 @@ extension AddFriendViewController:  UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell") as? FriendTableViewCell ?? FriendTableViewCell (style: .subtitle, reuseIdentifier: "FriendTableViewCell")
         switch segmentedControl.selectedSegmentIndex {
         case 0 :
+            if let url = URL (string: addFriendViewModel.usersToFollow[indexPath.row].photoUrl){
+                cell.profileImageView.load(url: url)
+            }
             cell.profileNameLabel.text = addFriendViewModel.usersToFollow[indexPath.row].name
             cell.followButton.setTitle("Follow", for: .normal)
             cell.messageButton.isHidden = true

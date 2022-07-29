@@ -13,7 +13,7 @@
                 <outlet property="addPhotoButton" destination="OAX-lx-SqM" id="Fmg-ep-2OD"/>
                 <outlet property="imageViewer" destination="bVn-zc-b5I" id="fWT-kn-znk"/>
                 <outlet property="textView" destination="MEV-fA-ypM" id="BvB-cE-giA"/>
-                <outlet property="titleTextField" destination="SX7-ni-Z08" id="jIh-IQ-FAc"/>
+                <outlet property="titleTextField" destination="SX7-ni-Z08" id="Hrm-bo-kJz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,7 +50,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please Add Text ..." translatesAutoresizingMaskIntoConstraints="NO" id="MEV-fA-ypM">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEV-fA-ypM">
                                             <rect key="frame" x="0.0" y="473.5" width="406" height="136"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>

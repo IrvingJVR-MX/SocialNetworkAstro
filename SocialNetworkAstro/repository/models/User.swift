@@ -5,12 +5,14 @@ public struct UserF: Codable {
     let name: String
     let email: String
     let createdAt: String
+    let photoUrl: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case email
         case createdAt
+        case photoUrl
     }
 
     var dictionary: [String: Any] {

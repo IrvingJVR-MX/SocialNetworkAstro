@@ -1,6 +1,10 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import UIKit
+import CoreData
+var userObject: User?
+
 public class PostDetailViewModel {
     var db = Firestore.firestore()
     var post = [PostDetailF]()
@@ -10,6 +14,14 @@ public class PostDetailViewModel {
             notifyFetchedPost()
         }
     }
+    
+    var notifPostComment = { () -> () in}
+    var postComment : Bool = false {
+        didSet {
+            notifyFetchedPost()
+        }
+    }
+    
     func fecthData(_ id: String){
         db.collection("PostComments").document(id).collection("comments").addSnapshotListener{ (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else{
@@ -19,24 +31,39 @@ public class PostDetailViewModel {
                 return try? QueryDocumentSnapshot.data(as: PostDetailF.self)
             }
             self.fetched = true
+            self.getUserInfo()
         }
         
     }
     
     func createComment (_ id : String, _ comment : String){
-        let postComment = PostDetailF(profilePhotoUrl: "https://firebasestorage.googleapis.com/v0/b/socialnetworkastro.appspot.com/o/5xaOocGu7ZWqJdmazySqOSxf8lW2%2FProfilePhoto%2Fprofile.jpg?alt=media&token=3e11dd49-e63d-4b7f-bc39-70b2179e80dd", profileName: "Irving", comment: comment)
-        
+        let postComment = PostDetailF(profilePhotoUrl: userObject?.photoUrl ?? "",  profileName: userObject?.name ?? "", comment: comment)
         db.collection("PostComments").document(id).collection("comments").document().setData(postComment.dictionary, completion: { error in
             if error == nil{
-                print("se hizo")
+                self.postComment = true
             } else{
-                print("error")
-            
+                self.postComment =  false
             }
         })
         
         
     }
+    
+    func getUserInfo(){
+         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+         let context = appDelegate.persistentContainer.viewContext
+         let fetchRequest = NSFetchRequest<User>(entityName: "User")
+         do{
+             let dbUser = try context.fetch(fetchRequest)
+             if dbUser[0].userid != nil {
+                 userObject = dbUser[0]
+             }
+         }catch(let error){
+             print ("error", error)
+         }
+       }
+    
+    
     
     
 }

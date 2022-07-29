@@ -13,10 +13,12 @@ public class NewPost {
     }
     let storage = Storage.storage().reference()
     var imageData: Data?
+    var userObject: User?
     var userID: String =  ""
     let db = Firestore.firestore()
     var imageURL: String = ""
     var postId: String = ""
+    
     func savePhoto(_ title:String, _ description:String){
         postId = db.collection("Post").document().documentID
         guard let imageDataStorage = imageData else{ return }
@@ -33,9 +35,11 @@ public class NewPost {
                       })
         })
     }
+    
+    
     func createPost (_ title:String, _ description:String, _ photoURL:String) {
         let timestamp = NSDate().timeIntervalSince1970
-        let city = PostF(postId: postId, title: title, profileName: "" , profilePhotoUrl: "" , description: description, userID: userID , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp)
+        let city = PostF(postId: postId,postTitle: title,  profileName: userObject?.name ?? "", profilePhotoUrl: userObject?.photoUrl ?? "" , description: description, userID: userObject?.userid ?? "" , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp)
         db.collection("Post").document(postId).setData(city.dictionary, completion: { error in
             if error == nil{
                 self.posted = true
@@ -47,14 +51,14 @@ public class NewPost {
     }
     
     
-    func getUserId(){
+    func getUserInfo(){
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
          let context = appDelegate.persistentContainer.viewContext
          let fetchRequest = NSFetchRequest<User>(entityName: "User")
          do{
              let dbUser = try context.fetch(fetchRequest)
-             if let userId = dbUser[0].userid, !userId.isEmpty {
-                 self.userID = userId
+             if dbUser[0].userid != nil {
+                 userObject = dbUser[0]
              }
          }catch(let error){
              print ("error", error)

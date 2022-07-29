@@ -27,7 +27,7 @@ public class HomeViewModel {
     }
     
     func filterPost(_ title :String){
-        post = post.filter({$0.title.lowercased().contains(title.lowercased())})
+        post = post.filter({$0.postTitle.lowercased().contains(title.lowercased())})
     }
     
 }

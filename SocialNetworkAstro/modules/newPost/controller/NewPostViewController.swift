@@ -7,11 +7,13 @@ class NewPostViewController: UIViewController {
     @IBOutlet weak var imageViewer: UIImageView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
+    
     let newPost = NewPost()
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.isScrollEnabled = false
-        newPost.getUserId()
+        newPost.getUserInfo()
+        textView.delegate = self
         newPost.notifyPostPosted = { [weak self] () in
             if self?.newPost.posted == true {
                 let alert = UIAlertController(title: "Successful", message: "Posted correctly", preferredStyle: .alert)
@@ -24,10 +26,15 @@ class NewPostViewController: UIViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
+        textView.text = "Please Add Text ..."
+        textView.textColor = UIColor.lightGray
     
     }
+    
+    
+    
     @IBAction func addPhotoClicked(_ sender: Any) {
-        let vc = UIImagePickerController ()
+         let vc = UIImagePickerController ()
          vc.sourceType = .photoLibrary
          vc.delegate  = self
          vc.allowsEditing =  true
@@ -46,6 +53,24 @@ class NewPostViewController: UIViewController {
         self.tabBarController?.selectedIndex = 0
     }
     
+
+}
+
+extension NewPostViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Please Add Text ..."
+            textView.textColor = UIColor.lightGray
+        }
+    }
 
 }
 

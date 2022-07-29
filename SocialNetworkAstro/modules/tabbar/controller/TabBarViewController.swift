@@ -11,7 +11,7 @@ class TabBarViewController: UIViewController {
         let vcNewPost = NewPostViewController()
         vcNewPost.title = "New Post"
         let vcAddFriends = AddFriendViewController()
-        vcAddFriends.title = "Add Friends"
+        vcAddFriends.title = "Follow"
         let vcProfile = ProfileViewController()
         vcProfile.title = "Profile"
         tabBarVC.setViewControllers([vcHome,vcNewPost,vcAddFriends,vcProfile], animated: false)

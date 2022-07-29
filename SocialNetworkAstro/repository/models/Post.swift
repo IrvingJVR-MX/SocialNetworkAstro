@@ -3,18 +3,18 @@ import Foundation
 
 public struct PostF: Codable {
     let postId: String
-    let title: String
+    let postTitle: String
     let profileName : String
     let profilePhotoUrl: String
-    let description: String?
-    let userID: String?
-    let photoURL: String?
-    let CountLikes: Int?
+    let description: String
+    let userID: String
+    let photoURL: String
+    let CountLikes: Int
     let CreatedAt: TimeInterval
 
     enum CodingKeys: String, CodingKey {
         case postId
-        case title
+        case postTitle
         case profileName
         case profilePhotoUrl
         case description

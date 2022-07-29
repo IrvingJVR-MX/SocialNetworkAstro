@@ -1,10 +1,13 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import UIKit
+import CoreData
 
 public class AddFriendViewModel {
     var db = Firestore.firestore()
     var users = [UserF]()
+    var userObject: User?
     var usersFollowed = [userFollowedDetail]()
     var usersToFollow = [UserF]()
     var notifyFetchedPost = { () -> () in}
@@ -21,12 +24,12 @@ public class AddFriendViewModel {
             self.users = documents.compactMap{ (QueryDocumentSnapshot) -> UserF? in
                 return try? QueryDocumentSnapshot.data(as: UserF.self)
             }
-            self.fecthUserFollweByUser()
+            self.getUserInfo()
         })
     }
     
     func fecthUserFollweByUser(){
-        db.collection("Users").document("6YtR4g1q24ZNXgcx2FkvC7nu5wz1").collection("Friends").addSnapshotListener{ (querySnapshot, error) in
+        db.collection("Users").document(userObject?.userid ?? "").collection("Friends").addSnapshotListener{ (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else{
                 return
             }
@@ -40,11 +43,27 @@ public class AddFriendViewModel {
     func orderUserYouMayKnow(){
         usersToFollow = users
         usersFollowed = usersFollowed.filter {$0.id != ""}
+        usersToFollow = usersToFollow.filter{$0.id != userObject?.userid}
         for val in usersFollowed{
             usersToFollow = usersToFollow.filter{ $0.id != val.id}
         }
         self.fetched = true
     }
+    
+    func getUserInfo(){
+         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+         let context = appDelegate.persistentContainer.viewContext
+         let fetchRequest = NSFetchRequest<User>(entityName: "User")
+         do{
+             let dbUser = try context.fetch(fetchRequest)
+             if dbUser[0].userid != nil {
+                 userObject = dbUser[0]
+             }
+         }catch(let error){
+             print ("error", error)
+         }
+        self.fecthUserFollweByUser()
+       }
     
 }
 
