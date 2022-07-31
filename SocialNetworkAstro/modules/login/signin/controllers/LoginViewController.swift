@@ -36,7 +36,9 @@ class LoginViewController: UIViewController {
     func authenticationFinished(){
         if !login.userID.isEmpty {
            let vcTabBar = TabBarViewController()
-           show(vcTabBar, sender: nil)
+            navigationController?.pushViewController(vcTabBar, animated: true)
+
+           //show(vcTabBar, sender: nil)
         } else{
             alert("Alert", "Login failed please verify password or contact administrator of the system")
         }

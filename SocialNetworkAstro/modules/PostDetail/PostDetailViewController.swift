@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 class PostDetailViewController: UIViewController {
 
     @IBOutlet weak var postImageView: UIImageView!
@@ -16,7 +17,7 @@ class PostDetailViewController: UIViewController {
         let uniNib =  UINib(nibName: "PostDetailTableViewCell", bundle: nil)
         tableView.register(uniNib, forCellReuseIdentifier: "PostDetailTableViewCell")
         if let url = URL (string: post?.photoURL ?? "" ){
-            postImageView.load(url: url)
+            postImageView.kf.setImage(with: url)
         }
         descriptionLabel.text = post?.description
         
@@ -59,13 +60,10 @@ extension PostDetailViewController:  UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostDetailTableViewCell") as? PostDetailTableViewCell ?? PostDetailTableViewCell (style: .subtitle, reuseIdentifier: "PostDetailTableViewCell")
         if let url = URL (string: postDetailViewModel.post[indexPath.row].profilePhotoUrl){
-            cell.profileImageView.load(url: url)
+            cell.profileImageView.kf.setImage(with: url)
         }
         cell.profileNameLabel.text = postDetailViewModel.post[indexPath.row].profileName
         cell.commentLabel.text = postDetailViewModel.post[indexPath.row].comment
-        if let url = URL (string: postDetailViewModel.post[indexPath.row].profilePhotoUrl){
-            cell.profileImageView.load(url: url)
-        }
         return cell
     }
 }

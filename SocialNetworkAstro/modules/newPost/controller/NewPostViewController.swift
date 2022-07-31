@@ -37,7 +37,6 @@ class NewPostViewController: UIViewController {
          let vc = UIImagePickerController ()
          vc.sourceType = .photoLibrary
          vc.delegate  = self
-         vc.allowsEditing =  true
          present (vc, animated: true)
     }
     
@@ -76,10 +75,11 @@ extension NewPostViewController: UITextViewDelegate {
 
 extension NewPostViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            imageViewer.image = image
-            newPost.imageData = image.pngData()
-        }
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+                imageViewer.image = image
+                newPost.imageData = image.pngData()
+            }
         picker.dismiss(animated: true, completion: nil)
     }
     

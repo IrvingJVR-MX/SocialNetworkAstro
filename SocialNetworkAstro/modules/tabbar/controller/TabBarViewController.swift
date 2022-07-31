@@ -20,8 +20,7 @@ class TabBarViewController: UIViewController {
         for x in 0..<items.count{
             items[x].image = UIImage(systemName: images[x])
         }
-        
-        
+
         tabBarVC.modalPresentationStyle = .fullScreen
         present(tabBarVC, animated: true)
     }

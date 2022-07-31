@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController {
         let vc = UIImagePickerController ()
         vc.sourceType = .photoLibrary
         vc.delegate  = self
-        vc.allowsEditing =  true
+       
         present (vc, animated: true)
     }
     
@@ -62,10 +62,10 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            imageView.image = image
-            register.imageData = image.pngData()
-        }
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+                imageView.image = image
+                register.imageData = image.pngData()
+            }
         picker.dismiss(animated: true, completion: nil)
     }
     

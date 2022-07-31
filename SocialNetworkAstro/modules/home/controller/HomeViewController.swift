@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Kingfisher
 class HomeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -39,13 +40,13 @@ extension HomeViewController:  UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell ?? HomeTableViewCell(style: .subtitle, reuseIdentifier: "HomeTableViewCell")
         if let url = URL (string: homeViewModel.post[indexPath.row].profilePhotoUrl){
-            cell.profilePhotoImageVIew.load(url: url)
+            cell.profilePhotoImageVIew.kf.setImage(with: url)
         }
         cell.profileNameLabel.text = homeViewModel.post[indexPath.row].profileName
         cell.titleLabel.text = homeViewModel.post[indexPath.row].postTitle
         cell.descriptionTextView.text = homeViewModel.post[indexPath.row].description
         if let url = URL (string: homeViewModel.post[indexPath.row].photoURL){
-            cell.postImageView.load(url: url)
+            cell.postImageView.kf.setImage(with: url)
         }
         return cell
     }
@@ -91,20 +92,4 @@ extension HomeViewController {
         }
     }
     
-}
-
-extension UIImageView{
-    func load(url: URL){
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url){
-                if let image = UIImage(data: data){
-                    DispatchQueue.main.async {
-                        self.image = image
-                    }
-                }
-            }
-            
-        }
-        
-    }
 }

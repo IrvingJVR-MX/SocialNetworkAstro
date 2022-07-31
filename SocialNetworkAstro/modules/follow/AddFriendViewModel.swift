@@ -28,6 +28,29 @@ public class AddFriendViewModel {
         })
     }
     
+    func addFollow(_ index: Int){
+        let user = userFollowedDetail(id: usersToFollow[index].id, name: usersToFollow[index].name, profilePhotoUrl: usersToFollow[index].photoUrl)
+        db.collection("Users").document(userObject?.userid ?? "").collection("Friends").document(user.id).setData(user.dictionary, completion: { error in
+            if error == nil{
+                
+            } else{
+        
+            }
+        })
+    }
+    
+    
+    func unFollow(_ index: Int){
+        db.collection("Users").document(userObject?.userid ?? "").collection("Friends").document(usersFollowed[index].id).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
+    
+    
     func fecthUserFollweByUser(){
         db.collection("Users").document(userObject?.userid ?? "").collection("Friends").addSnapshotListener{ (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else{

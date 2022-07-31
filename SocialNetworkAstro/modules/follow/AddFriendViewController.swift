@@ -1,5 +1,5 @@
 import UIKit
-
+import Kingfisher
 class AddFriendViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,16 @@ class AddFriendViewController: UIViewController {
 
     @IBAction func segmentedChanged(_ sender: Any) {
         tableView.reloadData()
+    }
+    
+    @objc func followUser(sender: UIButton) {
+        let index = sender.tag
+        addFriendViewModel.addFollow(index)
+    }
+    
+    @objc func unFollowUser(sender: UIButton) {
+        let index = sender.tag
+        addFriendViewModel.unFollow(index)
     }
 }
 
@@ -45,14 +55,24 @@ extension AddFriendViewController:  UITableViewDataSource, UITableViewDelegate {
         switch segmentedControl.selectedSegmentIndex {
         case 0 :
             if let url = URL (string: addFriendViewModel.usersToFollow[indexPath.row].photoUrl){
-                cell.profileImageView.load(url: url)
+                cell.profileImageView.kf.setImage(with: url)
             }
             cell.profileNameLabel.text = addFriendViewModel.usersToFollow[indexPath.row].name
             cell.followButton.setTitle("Follow", for: .normal)
             cell.messageButton.isHidden = true
+            cell.followButton.removeTarget(self, action: #selector(unFollowUser(sender:)), for: .touchUpInside)
+            cell.followButton.addTarget(self, action: #selector(followUser(sender:)), for: .touchUpInside)
+            cell.followButton.tag = indexPath.row
+            
         case 1:
+            if let url = URL (string: addFriendViewModel.usersFollowed[indexPath.row].profilePhotoUrl){
+                cell.profileImageView.kf.setImage(with: url)
+                }
                 cell.profileNameLabel.text = addFriendViewModel.usersFollowed[indexPath.row].name
                 cell.followButton.setTitle("un Follow", for: .normal)
+                cell.followButton.removeTarget(self, action: #selector(followUser(sender:)), for: .touchUpInside)
+                cell.followButton.addTarget(self, action: #selector(unFollowUser(sender:)), for: .touchUpInside)
+                cell.followButton.tag = indexPath.row
         default:
             break
         }
