@@ -11,6 +11,7 @@ public struct PostF: Codable {
     let photoURL: String
     let CountLikes: Int
     let CreatedAt: TimeInterval
+    let photoPath: String
 
     enum CodingKeys: String, CodingKey {
         case postId
@@ -22,6 +23,7 @@ public struct PostF: Codable {
         case photoURL
         case CountLikes
         case CreatedAt
+        case photoPath
     }
     var dictionary: [String: Any] {
             let data = (try? JSONEncoder().encode(self)) ?? Data()

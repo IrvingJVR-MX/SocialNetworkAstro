@@ -21,25 +21,27 @@ public class NewPost {
     
     func savePhoto(_ title:String, _ description:String){
         postId = db.collection("Post").document().documentID
+        let timestamp = NSDate().timeIntervalSince1970
         guard let imageDataStorage = imageData else{ return }
-        storage.child(userID + "/PhotoOfPublicacions/"+postId+".png").putData(imageDataStorage, metadata: nil, completion: { _, error in
+        storage.child(userID + "/PhotoOfPublicacions/\(postId)/"+postId+"\(timestamp)"+".png").putData(imageDataStorage, metadata: nil, completion: { _, error in
             guard error == nil else{
                 print("Failed")
                 return
             }
-            self.storage.child(self.userID + "/PhotoOfPublicacions/"+self.postId+".png").downloadURL(completion: { url, error in
+            self.storage.child(self.userID + "/PhotoOfPublicacions/\(self.postId)/"+self.postId+"\(timestamp)"+".png").downloadURL(completion: { url, error in
                            guard let url = url, error == nil else{
                                return
                            }
-                        self.createPost(title, description, url.absoluteString)
+                        let path = "\(self.userID)" + "/PhotoOfPublicacions/\(self.postId)/"+"\(self.postId)"+"\(timestamp)"+".png"
+                        self.createPost(title, description, url.absoluteString, path)
                       })
         })
     }
     
     
-    func createPost (_ title:String, _ description:String, _ photoURL:String) {
+    func createPost (_ title:String, _ description:String, _ photoURL:String, _ photoPath: String) {
         let timestamp = NSDate().timeIntervalSince1970
-        let post = PostF(postId: postId,postTitle: title,  profileName: userObject?.name ?? "", profilePhotoUrl: userObject?.photoUrl ?? "" , description: description, userID: userObject?.userid ?? "" , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp)
+        let post = PostF(postId: postId,postTitle: title,  profileName: userObject?.name ?? "", profilePhotoUrl: userObject?.photoUrl ?? "" , description: description, userID: userObject?.userid ?? "" , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp, photoPath: photoPath)
         db.collection("Post").document(postId).setData(post.dictionary, completion: { error in
             if error == nil{
                 self.posted = true
@@ -59,6 +61,7 @@ public class NewPost {
              let dbUser = try context.fetch(fetchRequest)
              if dbUser[0].userid != nil {
                  userObject = dbUser[0]
+                 userID =  userObject?.userid ?? ""
              }
          }catch(let error){
              print ("error", error)

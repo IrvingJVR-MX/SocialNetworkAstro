@@ -31,13 +31,11 @@ class ProfileViewController: UIViewController {
     @IBAction func logOutButton(_ sender: Any) {
         //profileViewModel.deleteUserInfo()
         self.navigationController?.popViewController(animated: true)
-
       /*  self.dismiss(animated: false)
         guard   let controllerC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as?
         LoginViewController else{ return }
         self.present(controllerC, animated: true, completion: nil)*/
     }
-    
     
     
     @objc func commentPost(sender: UIButton) {
@@ -56,12 +54,15 @@ class ProfileViewController: UIViewController {
             let index = sender.tag
             self.profileViewModel.deletePostImage(index)
         }))
-        
         self.present(alert, animated: true, completion: nil)
-
-
     }
     
+    @objc func editPost(sender: UIButton) {
+        let index = sender.tag
+        let editPostView = EditPostViewController()
+        editPostView.post = profileViewModel.post[index]
+        show(editPostView, sender: nil)
+    }
     
 }
 
@@ -84,6 +85,8 @@ extension ProfileViewController:  UITableViewDataSource, UITableViewDelegate {
         cell.commentButton.tag = indexPath.row
         cell.deletePostButton.addTarget(self, action: #selector(deletePost(sender:)), for: .touchUpInside)
         cell.deletePostButton.tag = indexPath.row
+        cell.editButton.addTarget(self, action: #selector(editPost(sender:)), for: .touchUpInside)
+        cell.editButton.tag = indexPath.row
 
         return cell
     }

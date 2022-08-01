@@ -39,10 +39,10 @@
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UOl-nf-UyK">
-                        <rect key="frame" x="12" y="51" width="201" height="242"/>
+                        <rect key="frame" x="12" y="51" width="201" height="233"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="201" id="6zh-vj-47K"/>
-                            <constraint firstAttribute="height" constant="242" id="EvQ-h7-OC9"/>
+                            <constraint firstAttribute="height" constant="233" id="EvQ-h7-OC9"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPc-Uj-VjP">
@@ -57,10 +57,18 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="message.fill" catalog="system"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeP-6T-x9v">
+                        <rect key="frame" x="165.5" y="303" width="42.5" height="31"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="BeP-6T-x9v" secondAttribute="trailing" constant="276" id="1EB-yh-Spw"/>
                     <constraint firstItem="UOl-nf-UyK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="2RQ-di-ygk"/>
-                    <constraint firstItem="CPc-Uj-VjP" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="9" id="8ej-fN-ttf"/>
+                    <constraint firstAttribute="bottom" secondItem="BeP-6T-x9v" secondAttribute="bottom" constant="15" id="8LX-L0-rQy"/>
+                    <constraint firstItem="CPc-Uj-VjP" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="18" id="8ej-fN-ttf"/>
                     <constraint firstItem="UOl-nf-UyK" firstAttribute="top" secondItem="Utw-5c-oRP" secondAttribute="bottom" constant="6" id="CEE-9f-N8y"/>
                     <constraint firstItem="nNM-wS-SKE" firstAttribute="leading" secondItem="UOl-nf-UyK" secondAttribute="trailing" constant="9" id="CQL-WF-XVN"/>
                     <constraint firstAttribute="trailing" secondItem="nNM-wS-SKE" secondAttribute="trailing" constant="35" id="Euc-xg-0Ay"/>
@@ -70,19 +78,22 @@
                     <constraint firstItem="CPc-Uj-VjP" firstAttribute="leading" secondItem="zT0-hq-9jB" secondAttribute="trailing" constant="29" id="IGs-D3-mkA"/>
                     <constraint firstItem="zT0-hq-9jB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="IQE-TG-3xW"/>
                     <constraint firstAttribute="bottom" secondItem="nNM-wS-SKE" secondAttribute="bottom" constant="69" id="Lf7-Vn-pve"/>
+                    <constraint firstItem="BeP-6T-x9v" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="19" id="Mb0-31-f8I"/>
                     <constraint firstItem="CPc-Uj-VjP" firstAttribute="leading" secondItem="zT0-hq-9jB" secondAttribute="trailing" constant="29" id="TIV-a6-ZaM"/>
                     <constraint firstItem="nNM-wS-SKE" firstAttribute="leading" secondItem="UOl-nf-UyK" secondAttribute="trailing" constant="9" id="aau-1L-L2a"/>
                     <constraint firstItem="Utw-5c-oRP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="jtR-GN-T8W"/>
                     <constraint firstItem="UOl-nf-UyK" firstAttribute="top" secondItem="Utw-5c-oRP" secondAttribute="bottom" constant="6" id="pOJ-kz-9h5"/>
                     <constraint firstAttribute="bottom" secondItem="CPc-Uj-VjP" secondAttribute="bottom" constant="16" id="qEz-re-RJR"/>
                     <constraint firstItem="nNM-wS-SKE" firstAttribute="top" secondItem="Utw-5c-oRP" secondAttribute="bottom" constant="24" id="sOD-jH-cI4"/>
-                    <constraint firstItem="zT0-hq-9jB" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="9" id="wTr-M9-0Qb"/>
+                    <constraint firstItem="zT0-hq-9jB" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="18" id="wTr-M9-0Qb"/>
+                    <constraint firstItem="BeP-6T-x9v" firstAttribute="leading" secondItem="CPc-Uj-VjP" secondAttribute="trailing" constant="33.5" id="xO0-2j-3kx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentButton" destination="zT0-hq-9jB" id="SJF-nK-ai8"/>
                 <outlet property="deletePostButton" destination="CPc-Uj-VjP" id="IZc-yW-3Jd"/>
+                <outlet property="editButton" destination="BeP-6T-x9v" id="dve-MW-01e"/>
                 <outlet property="postDescriptionTextView" destination="nNM-wS-SKE" id="9Bq-2k-04U"/>
                 <outlet property="postImageView" destination="UOl-nf-UyK" id="1b0-4T-KCU"/>
                 <outlet property="postNameLabel" destination="Utw-5c-oRP" id="4TG-RM-nhO"/>
@@ -92,6 +103,7 @@
     </objects>
     <resources>
         <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
