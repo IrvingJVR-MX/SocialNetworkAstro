@@ -1,0 +1,1393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CE686D985F9D0CF19B9F406 /* Pods_SocialNetworkAstro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C366F43EE7D96C8C60B9E5D1 /* Pods_SocialNetworkAstro.framework */; };
+		841717B528879CB100321BA7 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841717B328879CB100321BA7 /* HomeTableViewCell.swift */; };
+		841717B628879CB100321BA7 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841717B428879CB100321BA7 /* HomeTableViewCell.xib */; };
+		841717B92887A7EF00321BA7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 841717B82887A7EF00321BA7 /* FirebaseDatabase */; };
+		841717BB2887B78400321BA7 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 841717BA2887B78400321BA7 /* FirebaseFirestoreSwift */; };
+		84241074288A00E400CE869D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84241073288A00E400CE869D /* HomeViewModel.swift */; };
+		84241077288A532800CE869D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84241075288A532800CE869D /* PostDetailViewController.swift */; };
+		84241078288A532800CE869D /* PostDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84241076288A532800CE869D /* PostDetailViewController.xib */; };
+		8435C7F62877480800A9D108 /* SocialNetworkAstro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8435C7ED2877480800A9D108 /* SocialNetworkAstro.xcdatamodeld */; };
+		8435C7F82877480800A9D108 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C7F02877480800A9D108 /* AppDelegate.swift */; };
+		8435C7FA2877480800A9D108 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C7F22877480800A9D108 /* SceneDelegate.swift */; };
+		8435C80C28774BE100A9D108 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8435C80B28774BE100A9D108 /* GoogleService-Info.plist */; };
+		8435C80F28774CDD00A9D108 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8435C80E28774CDD00A9D108 /* FirebaseAuth */; };
+		8435C81128774CDD00A9D108 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 8435C81028774CDD00A9D108 /* FirebaseAuthCombine-Community */; };
+		8435C81328774CDD00A9D108 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8435C81228774CDD00A9D108 /* FirebaseFirestore */; };
+		8435C81528774CDD00A9D108 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8435C81428774CDD00A9D108 /* FirebaseStorage */; };
+		8435C81C2877574800A9D108 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C81B2877574800A9D108 /* LoginViewController.swift */; };
+		8435C81E28777AE300A9D108 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C81D28777AE300A9D108 /* Login.swift */; };
+		8435C824287787A100A9D108 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C822287787A100A9D108 /* SignUpViewController.swift */; };
+		8435C825287787A100A9D108 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C823287787A100A9D108 /* SignUpViewController.xib */; };
+		8435C82A2877887500A9D108 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C8292877887500A9D108 /* Register.swift */; };
+		8435C83D287C8B0800A9D108 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C83B287C8B0800A9D108 /* HomeViewController.swift */; };
+		8435C83E287C8B0800A9D108 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C83C287C8B0800A9D108 /* HomeViewController.xib */; };
+		8435C841287C8C5D00A9D108 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C83F287C8C5D00A9D108 /* ProfileViewController.swift */; };
+		8435C842287C8C5D00A9D108 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C840287C8C5D00A9D108 /* ProfileViewController.xib */; };
+		8435C848287C918300A9D108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C846287C918300A9D108 /* TabBarViewController.swift */; };
+		8435C849287C918300A9D108 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C847287C918300A9D108 /* TabBarViewController.xib */; };
+		8435C850287C94F200A9D108 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C84E287C94F200A9D108 /* NewPostViewController.swift */; };
+		8435C851287C94F200A9D108 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C84F287C94F200A9D108 /* NewPostViewController.xib */; };
+		8435C858287C96EE00A9D108 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C856287C96EE00A9D108 /* AddFriendViewController.swift */; };
+		8435C859287C96EE00A9D108 /* AddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C857287C96EE00A9D108 /* AddFriendViewController.xib */; };
+		8435C85B287CA46900A9D108 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C85A287CA46900A9D108 /* FirebaseManager.swift */; };
+		8435C85E287CA62900A9D108 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C85C287CA62800A9D108 /* User.swift */; };
+		8435C85F287CA62900A9D108 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C85D287CA62900A9D108 /* BaseModel.swift */; };
+		8435C865287DDE3700A9D108 /* EncodableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C863287DDE3700A9D108 /* EncodableExtension.swift */; };
+		847034AE28764EB100D58193 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847034AD28764EB100D58193 /* AppDelegate.swift */; };
+		847034B028764EB100D58193 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847034AF28764EB100D58193 /* SceneDelegate.swift */; };
+		847034B528764EB100D58193 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847034B328764EB100D58193 /* Main.storyboard */; };
+		847034B828764EB100D58193 /* SocialNetworkAstro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847034B628764EB100D58193 /* SocialNetworkAstro.xcdatamodeld */; };
+		847034BA28764EB200D58193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847034B928764EB200D58193 /* Assets.xcassets */; };
+		847034BD28764EB200D58193 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847034BB28764EB200D58193 /* LaunchScreen.storyboard */; };
+		847034C828764EB300D58193 /* SocialNetworkAstroTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847034C728764EB300D58193 /* SocialNetworkAstroTests.swift */; };
+		847034D228764EB300D58193 /* SocialNetworkAstroUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847034D128764EB300D58193 /* SocialNetworkAstroUITests.swift */; };
+		847034D428764EB300D58193 /* SocialNetworkAstroUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847034D328764EB300D58193 /* SocialNetworkAstroUITestsLaunchTests.swift */; };
+		84CDEC3F2880AC6D00D4111A /* NewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDEC3E2880AC6D00D4111A /* NewPost.swift */; };
+		84CDEC422880D95A00D4111A /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDEC402880D95900D4111A /* User+CoreDataClass.swift */; };
+		84CDEC432880D95A00D4111A /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDEC412880D95A00D4111A /* User+CoreDataProperties.swift */; };
+		84CDEC452881031800D4111A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDEC442881031800D4111A /* Post.swift */; };
+		84F9D7C2288A60BA00D508A2 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7C1288A60BA00D508A2 /* PostDetailViewModel.swift */; };
+		84F9D7C4288A66FF00D508A2 /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7C3288A66FF00D508A2 /* PostDetail.swift */; };
+		84F9D7C7288A6C7D00D508A2 /* PostDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7C5288A6C7D00D508A2 /* PostDetailTableViewCell.swift */; };
+		84F9D7C8288A6C7D00D508A2 /* PostDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7C6288A6C7D00D508A2 /* PostDetailTableViewCell.xib */; };
+		84F9D7CC288F81E200D508A2 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7CA288F81E200D508A2 /* FriendTableViewCell.swift */; };
+		84F9D7CD288F81E200D508A2 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7CB288F81E200D508A2 /* FriendTableViewCell.xib */; };
+		84F9D7D02890ED1F00D508A2 /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */; };
+		84F9D7D22890F07700D508A2 /* UserFollowedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7D12890F07700D508A2 /* UserFollowedDetail.swift */; };
+		84F9D7D52895C4DC00D508A2 /* ProfilePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */; };
+		84F9D7D62895C4DC00D508A2 /* ProfilePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */; };
+		84F9D7D82895C8FD00D508A2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7D72895C8FD00D508A2 /* ProfileViewModel.swift */; };
+		84F9D7DC28973E8C00D508A2 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7DA28973E8C00D508A2 /* EditPostViewController.swift */; };
+		84F9D7DD28973E8C00D508A2 /* EditPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7DB28973E8C00D508A2 /* EditPostViewController.xib */; };
+		84F9D7DF2897437800D508A2 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7DE2897437800D508A2 /* EditPostViewModel.swift */; };
+		84F9D7E32898637400D508A2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7E12898637400D508A2 /* EditProfileViewController.swift */; };
+		84F9D7E42898637400D508A2 /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7E22898637400D508A2 /* EditProfileViewController.xib */; };
+		84F9D7E628986F4800D508A2 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7E528986F4800D508A2 /* EditProfileViewModel.swift */; };
+		D3A3671F2C7383A269E8B7F8 /* Pods_SocialNetworkAstroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BEFC40AB2655A8E7B686D2 /* Pods_SocialNetworkAstroTests.framework */; };
+		F29E435371A128D892E3A8A6 /* Pods_SocialNetworkAstro_SocialNetworkAstroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0349347D44AE45552548D527 /* Pods_SocialNetworkAstro_SocialNetworkAstroUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		847034C428764EB300D58193 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847034A228764EB000D58193 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847034A928764EB100D58193;
+			remoteInfo = SocialNetworkAstro;
+		};
+		847034CE28764EB300D58193 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847034A228764EB000D58193 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 847034A928764EB100D58193;
+			remoteInfo = SocialNetworkAstro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02BEFC40AB2655A8E7B686D2 /* Pods_SocialNetworkAstroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialNetworkAstroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0349347D44AE45552548D527 /* Pods_SocialNetworkAstro_SocialNetworkAstroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialNetworkAstro_SocialNetworkAstroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45096EA8F6965947037945E8 /* Pods-SocialNetworkAstroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstroTests.debug.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstroTests/Pods-SocialNetworkAstroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69E4B3A7ECA54F0225CDDE7B /* Pods-SocialNetworkAstro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstro.release.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstro/Pods-SocialNetworkAstro.release.xcconfig"; sourceTree = "<group>"; };
+		7BC09F31E58DA53800F84D54 /* Pods-SocialNetworkAstroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstroTests.release.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstroTests/Pods-SocialNetworkAstroTests.release.xcconfig"; sourceTree = "<group>"; };
+		841717B328879CB100321BA7 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		841717B428879CB100321BA7 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		84241073288A00E400CE869D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		84241075288A532800CE869D /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		84241076288A532800CE869D /* PostDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailViewController.xib; sourceTree = "<group>"; };
+		8435C7E82877480800A9D108 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8435C7EA2877480800A9D108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8435C7EC2877480800A9D108 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8435C7EE2877480800A9D108 /* SocialNetworkAstro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialNetworkAstro.xcdatamodel; sourceTree = "<group>"; };
+		8435C7EF2877480800A9D108 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8435C7F02877480800A9D108 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8435C7F12877480800A9D108 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8435C7F22877480800A9D108 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8435C80B28774BE100A9D108 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8435C81B2877574800A9D108 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8435C81D28777AE300A9D108 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		8435C822287787A100A9D108 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8435C823287787A100A9D108 /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		8435C8292877887500A9D108 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		8435C83B287C8B0800A9D108 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8435C83C287C8B0800A9D108 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8435C83F287C8C5D00A9D108 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8435C840287C8C5D00A9D108 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		8435C846287C918300A9D108 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8435C847287C918300A9D108 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		8435C84E287C94F200A9D108 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		8435C84F287C94F200A9D108 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
+		8435C856287C96EE00A9D108 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		8435C857287C96EE00A9D108 /* AddFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendViewController.xib; sourceTree = "<group>"; };
+		8435C85A287CA46900A9D108 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		8435C85C287CA62800A9D108 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8435C85D287CA62900A9D108 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		8435C863287DDE3700A9D108 /* EncodableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodableExtension.swift; sourceTree = "<group>"; };
+		847034AA28764EB100D58193 /* SocialNetworkAstro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialNetworkAstro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		847034AD28764EB100D58193 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		847034AF28764EB100D58193 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		847034B428764EB100D58193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		847034B728764EB100D58193 /* SocialNetworkAstro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SocialNetworkAstro.xcdatamodel; sourceTree = "<group>"; };
+		847034B928764EB200D58193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		847034BC28764EB200D58193 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		847034BE28764EB200D58193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847034C328764EB300D58193 /* SocialNetworkAstroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialNetworkAstroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		847034C728764EB300D58193 /* SocialNetworkAstroTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkAstroTests.swift; sourceTree = "<group>"; };
+		847034CD28764EB300D58193 /* SocialNetworkAstroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialNetworkAstroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		847034D128764EB300D58193 /* SocialNetworkAstroUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkAstroUITests.swift; sourceTree = "<group>"; };
+		847034D328764EB300D58193 /* SocialNetworkAstroUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetworkAstroUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		84CDEC3E2880AC6D00D4111A /* NewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPost.swift; sourceTree = "<group>"; };
+		84CDEC402880D95900D4111A /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84CDEC412880D95A00D4111A /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		84CDEC442881031800D4111A /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		84F9D7C1288A60BA00D508A2 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		84F9D7C3288A66FF00D508A2 /* PostDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
+		84F9D7C5288A6C7D00D508A2 /* PostDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewCell.swift; sourceTree = "<group>"; };
+		84F9D7C6288A6C7D00D508A2 /* PostDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailTableViewCell.xib; sourceTree = "<group>"; };
+		84F9D7CA288F81E200D508A2 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		84F9D7CB288F81E200D508A2 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
+		84F9D7D12890F07700D508A2 /* UserFollowedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowedDetail.swift; sourceTree = "<group>"; };
+		84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostTableViewCell.swift; sourceTree = "<group>"; };
+		84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePostTableViewCell.xib; sourceTree = "<group>"; };
+		84F9D7D72895C8FD00D508A2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		84F9D7DA28973E8C00D508A2 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		84F9D7DB28973E8C00D508A2 /* EditPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPostViewController.xib; sourceTree = "<group>"; };
+		84F9D7DE2897437800D508A2 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
+		84F9D7E12898637400D508A2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		84F9D7E22898637400D508A2 /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		84F9D7E528986F4800D508A2 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		C366F43EE7D96C8C60B9E5D1 /* Pods_SocialNetworkAstro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialNetworkAstro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA36A4AA4C811451159BFC4E /* Pods-SocialNetworkAstro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstro.debug.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstro/Pods-SocialNetworkAstro.debug.xcconfig"; sourceTree = "<group>"; };
+		E5012C0038D0ABBBE91625EC /* Pods-SocialNetworkAstro-SocialNetworkAstroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstro-SocialNetworkAstroUITests.debug.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstro-SocialNetworkAstroUITests/Pods-SocialNetworkAstro-SocialNetworkAstroUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F27D7C781D43890EFA150152 /* Pods-SocialNetworkAstro-SocialNetworkAstroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstro-SocialNetworkAstroUITests.release.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstro-SocialNetworkAstroUITests/Pods-SocialNetworkAstro-SocialNetworkAstroUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		847034A728764EB100D58193 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841717B92887A7EF00321BA7 /* FirebaseDatabase in Frameworks */,
+				8435C80F28774CDD00A9D108 /* FirebaseAuth in Frameworks */,
+				8435C81528774CDD00A9D108 /* FirebaseStorage in Frameworks */,
+				8435C81128774CDD00A9D108 /* FirebaseAuthCombine-Community in Frameworks */,
+				8435C81328774CDD00A9D108 /* FirebaseFirestore in Frameworks */,
+				841717BB2887B78400321BA7 /* FirebaseFirestoreSwift in Frameworks */,
+				4CE686D985F9D0CF19B9F406 /* Pods_SocialNetworkAstro.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847034C028764EB300D58193 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3A3671F2C7383A269E8B7F8 /* Pods_SocialNetworkAstroTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847034CA28764EB300D58193 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F29E435371A128D892E3A8A6 /* Pods_SocialNetworkAstro_SocialNetworkAstroUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18562576BFCBCDE33E04A089 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA36A4AA4C811451159BFC4E /* Pods-SocialNetworkAstro.debug.xcconfig */,
+				69E4B3A7ECA54F0225CDDE7B /* Pods-SocialNetworkAstro.release.xcconfig */,
+				E5012C0038D0ABBBE91625EC /* Pods-SocialNetworkAstro-SocialNetworkAstroUITests.debug.xcconfig */,
+				F27D7C781D43890EFA150152 /* Pods-SocialNetworkAstro-SocialNetworkAstroUITests.release.xcconfig */,
+				45096EA8F6965947037945E8 /* Pods-SocialNetworkAstroTests.debug.xcconfig */,
+				7BC09F31E58DA53800F84D54 /* Pods-SocialNetworkAstroTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		841717B72887A7EF00321BA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C366F43EE7D96C8C60B9E5D1 /* Pods_SocialNetworkAstro.framework */,
+				0349347D44AE45552548D527 /* Pods_SocialNetworkAstro_SocialNetworkAstroUITests.framework */,
+				02BEFC40AB2655A8E7B686D2 /* Pods_SocialNetworkAstroTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8435C7E72877480800A9D108 /* SocialNetworkAstro */ = {
+			isa = PBXGroup;
+			children = (
+				8435C7E82877480800A9D108 /* Assets.xcassets */,
+				8435C7E92877480800A9D108 /* LaunchScreen.storyboard */,
+				8435C7EB2877480800A9D108 /* Main.storyboard */,
+				8435C7ED2877480800A9D108 /* SocialNetworkAstro.xcdatamodeld */,
+				8435C7EF2877480800A9D108 /* LoginViewController.swift */,
+				8435C7F02877480800A9D108 /* AppDelegate.swift */,
+				8435C7F12877480800A9D108 /* Info.plist */,
+				8435C7F22877480800A9D108 /* SceneDelegate.swift */,
+			);
+			path = SocialNetworkAstro;
+			sourceTree = "<group>";
+		};
+		8435C7FB2877481200A9D108 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				8435C8002877484100A9D108 /* models */,
+				8435C7FE2877483000A9D108 /* network */,
+				8435C7FC2877482100A9D108 /* local */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		8435C7FC2877482100A9D108 /* local */ = {
+			isa = PBXGroup;
+			children = (
+				8435C7FD2877482700A9D108 /* managers */,
+			);
+			path = local;
+			sourceTree = "<group>";
+		};
+		8435C7FD2877482700A9D108 /* managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		8435C7FE2877483000A9D108 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				8435C7FF2877483700A9D108 /* managers */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		8435C7FF2877483700A9D108 /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				8435C85A287CA46900A9D108 /* FirebaseManager.swift */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		8435C8002877484100A9D108 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				84CDEC402880D95900D4111A /* User+CoreDataClass.swift */,
+				84CDEC412880D95A00D4111A /* User+CoreDataProperties.swift */,
+				8435C85D287CA62900A9D108 /* BaseModel.swift */,
+				8435C85C287CA62800A9D108 /* User.swift */,
+				84CDEC442881031800D4111A /* Post.swift */,
+				84F9D7C3288A66FF00D508A2 /* PostDetail.swift */,
+				84F9D7D12890F07700D508A2 /* UserFollowedDetail.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		8435C8032877489300A9D108 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7E02898634F00D508A2 /* editProfileInfo */,
+				84F9D7D928973E6500D508A2 /* editPost */,
+				84F9D7C0288A55AA00D508A2 /* PostDetail */,
+				8435C84A287C946000A9D108 /* newPost */,
+				8435C843287C912D00A9D108 /* tabbar */,
+				8435C837287C883E00A9D108 /* profile */,
+				8435C833287C87E600A9D108 /* home */,
+				8435C806287748CD00A9D108 /* follow */,
+				8435C8042877489D00A9D108 /* login */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		8435C8042877489D00A9D108 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				8435C81F287786D500A9D108 /* signUp */,
+				8435C805287748A300A9D108 /* signin */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		8435C805287748A300A9D108 /* signin */ = {
+			isa = PBXGroup;
+			children = (
+				8435C8172877500D00A9D108 /* viewModels */,
+				8435C8162877500300A9D108 /* controllers */,
+			);
+			path = signin;
+			sourceTree = "<group>";
+		};
+		8435C806287748CD00A9D108 /* follow */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7CE288F81F600D508A2 /* cell */,
+				8435C857287C96EE00A9D108 /* AddFriendViewController.xib */,
+				8435C856287C96EE00A9D108 /* AddFriendViewController.swift */,
+				84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */,
+			);
+			path = follow;
+			sourceTree = "<group>";
+		};
+		8435C8162877500300A9D108 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8435C81B2877574800A9D108 /* LoginViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		8435C8172877500D00A9D108 /* viewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8435C81D28777AE300A9D108 /* Login.swift */,
+			);
+			path = viewModels;
+			sourceTree = "<group>";
+		};
+		8435C81F287786D500A9D108 /* signUp */ = {
+			isa = PBXGroup;
+			children = (
+				8435C826287787A900A9D108 /* Controller */,
+				8435C8212877877B00A9D108 /* View */,
+				8435C8202877877000A9D108 /* ViewModels */,
+			);
+			path = signUp;
+			sourceTree = "<group>";
+		};
+		8435C8202877877000A9D108 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8435C8292877887500A9D108 /* Register.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8435C8212877877B00A9D108 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8435C823287787A100A9D108 /* SignUpViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8435C826287787A900A9D108 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8435C822287787A100A9D108 /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8435C833287C87E600A9D108 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				8435C834287C880900A9D108 /* controller */,
+				8435C836287C881B00A9D108 /* view */,
+				8435C835287C881300A9D108 /* viewModel */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		8435C834287C880900A9D108 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8435C83B287C8B0800A9D108 /* HomeViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8435C835287C881300A9D108 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84241073288A00E400CE869D /* HomeViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8435C836287C881B00A9D108 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84CDEC462883950B00D4111A /* Cell */,
+				8435C83C287C8B0800A9D108 /* HomeViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8435C837287C883E00A9D108 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				8435C83A287C885E00A9D108 /* viewModel */,
+				8435C839287C885400A9D108 /* view */,
+				8435C838287C884B00A9D108 /* controllers */,
+				84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */,
+				84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		8435C838287C884B00A9D108 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8435C83F287C8C5D00A9D108 /* ProfileViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		8435C839287C885400A9D108 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8435C840287C8C5D00A9D108 /* ProfileViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8435C83A287C885E00A9D108 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7D72895C8FD00D508A2 /* ProfileViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8435C843287C912D00A9D108 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				8435C845287C914C00A9D108 /* controller */,
+				8435C844287C914400A9D108 /* view */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		8435C844287C914400A9D108 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8435C847287C918300A9D108 /* TabBarViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8435C845287C914C00A9D108 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8435C846287C918300A9D108 /* TabBarViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8435C84A287C946000A9D108 /* newPost */ = {
+			isa = PBXGroup;
+			children = (
+				8435C84D287C94D200A9D108 /* viewModel */,
+				8435C84C287C94C400A9D108 /* controller */,
+				8435C84B287C94B900A9D108 /* view */,
+			);
+			path = newPost;
+			sourceTree = "<group>";
+		};
+		8435C84B287C94B900A9D108 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8435C84F287C94F200A9D108 /* NewPostViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8435C84C287C94C400A9D108 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8435C84E287C94F200A9D108 /* NewPostViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8435C84D287C94D200A9D108 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84CDEC3E2880AC6D00D4111A /* NewPost.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8435C860287DDE3700A9D108 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8435C862287DDE3700A9D108 /* extensions */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		8435C862287DDE3700A9D108 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8435C863287DDE3700A9D108 /* EncodableExtension.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		847034A128764EB000D58193 = {
+			isa = PBXGroup;
+			children = (
+				8435C7E72877480800A9D108 /* SocialNetworkAstro */,
+				847034AC28764EB100D58193 /* SocialNetworkAstro */,
+				847034C628764EB300D58193 /* SocialNetworkAstroTests */,
+				847034D028764EB300D58193 /* SocialNetworkAstroUITests */,
+				847034AB28764EB100D58193 /* Products */,
+				841717B72887A7EF00321BA7 /* Frameworks */,
+				18562576BFCBCDE33E04A089 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		847034AB28764EB100D58193 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				847034AA28764EB100D58193 /* SocialNetworkAstro.app */,
+				847034C328764EB300D58193 /* SocialNetworkAstroTests.xctest */,
+				847034CD28764EB300D58193 /* SocialNetworkAstroUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		847034AC28764EB100D58193 /* SocialNetworkAstro */ = {
+			isa = PBXGroup;
+			children = (
+				8435C860287DDE3700A9D108 /* utilities */,
+				8435C8032877489300A9D108 /* modules */,
+				8435C7FB2877481200A9D108 /* repository */,
+				847034AD28764EB100D58193 /* AppDelegate.swift */,
+				847034AF28764EB100D58193 /* SceneDelegate.swift */,
+				847034B328764EB100D58193 /* Main.storyboard */,
+				847034B928764EB200D58193 /* Assets.xcassets */,
+				847034BB28764EB200D58193 /* LaunchScreen.storyboard */,
+				847034BE28764EB200D58193 /* Info.plist */,
+				847034B628764EB100D58193 /* SocialNetworkAstro.xcdatamodeld */,
+				8435C80B28774BE100A9D108 /* GoogleService-Info.plist */,
+			);
+			path = SocialNetworkAstro;
+			sourceTree = "<group>";
+		};
+		847034C628764EB300D58193 /* SocialNetworkAstroTests */ = {
+			isa = PBXGroup;
+			children = (
+				847034C728764EB300D58193 /* SocialNetworkAstroTests.swift */,
+			);
+			path = SocialNetworkAstroTests;
+			sourceTree = "<group>";
+		};
+		847034D028764EB300D58193 /* SocialNetworkAstroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				847034D128764EB300D58193 /* SocialNetworkAstroUITests.swift */,
+				847034D328764EB300D58193 /* SocialNetworkAstroUITestsLaunchTests.swift */,
+			);
+			path = SocialNetworkAstroUITests;
+			sourceTree = "<group>";
+		};
+		84CDEC462883950B00D4111A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				841717B328879CB100321BA7 /* HomeTableViewCell.swift */,
+				841717B428879CB100321BA7 /* HomeTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84F9D7C0288A55AA00D508A2 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7C9288A6C8B00D508A2 /* cell */,
+				84241076288A532800CE869D /* PostDetailViewController.xib */,
+				84241075288A532800CE869D /* PostDetailViewController.swift */,
+				84F9D7C1288A60BA00D508A2 /* PostDetailViewModel.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		84F9D7C9288A6C8B00D508A2 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7C5288A6C7D00D508A2 /* PostDetailTableViewCell.swift */,
+				84F9D7C6288A6C7D00D508A2 /* PostDetailTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84F9D7CE288F81F600D508A2 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7CB288F81E200D508A2 /* FriendTableViewCell.xib */,
+				84F9D7CA288F81E200D508A2 /* FriendTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		84F9D7D928973E6500D508A2 /* editPost */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7DA28973E8C00D508A2 /* EditPostViewController.swift */,
+				84F9D7DB28973E8C00D508A2 /* EditPostViewController.xib */,
+				84F9D7DE2897437800D508A2 /* EditPostViewModel.swift */,
+			);
+			path = editPost;
+			sourceTree = "<group>";
+		};
+		84F9D7E02898634F00D508A2 /* editProfileInfo */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7E12898637400D508A2 /* EditProfileViewController.swift */,
+				84F9D7E22898637400D508A2 /* EditProfileViewController.xib */,
+				84F9D7E528986F4800D508A2 /* EditProfileViewModel.swift */,
+			);
+			path = editProfileInfo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		847034A928764EB100D58193 /* SocialNetworkAstro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847034D728764EB300D58193 /* Build configuration list for PBXNativeTarget "SocialNetworkAstro" */;
+			buildPhases = (
+				DD46BF1A2E9DED96A7076AB4 /* [CP] Check Pods Manifest.lock */,
+				847034A628764EB100D58193 /* Sources */,
+				847034A728764EB100D58193 /* Frameworks */,
+				847034A828764EB100D58193 /* Resources */,
+				D0D5D29B227AD0B791EC6CA9 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialNetworkAstro;
+			packageProductDependencies = (
+				8435C80E28774CDD00A9D108 /* FirebaseAuth */,
+				8435C81028774CDD00A9D108 /* FirebaseAuthCombine-Community */,
+				8435C81228774CDD00A9D108 /* FirebaseFirestore */,
+				8435C81428774CDD00A9D108 /* FirebaseStorage */,
+				841717B82887A7EF00321BA7 /* FirebaseDatabase */,
+				841717BA2887B78400321BA7 /* FirebaseFirestoreSwift */,
+			);
+			productName = SocialNetworkAstro;
+			productReference = 847034AA28764EB100D58193 /* SocialNetworkAstro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		847034C228764EB300D58193 /* SocialNetworkAstroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847034DA28764EB300D58193 /* Build configuration list for PBXNativeTarget "SocialNetworkAstroTests" */;
+			buildPhases = (
+				E13407D35B0C37970BF4070E /* [CP] Check Pods Manifest.lock */,
+				847034BF28764EB300D58193 /* Sources */,
+				847034C028764EB300D58193 /* Frameworks */,
+				847034C128764EB300D58193 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847034C528764EB300D58193 /* PBXTargetDependency */,
+			);
+			name = SocialNetworkAstroTests;
+			productName = SocialNetworkAstroTests;
+			productReference = 847034C328764EB300D58193 /* SocialNetworkAstroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		847034CC28764EB300D58193 /* SocialNetworkAstroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847034DD28764EB300D58193 /* Build configuration list for PBXNativeTarget "SocialNetworkAstroUITests" */;
+			buildPhases = (
+				1092E9C96561384427500ED2 /* [CP] Check Pods Manifest.lock */,
+				847034C928764EB300D58193 /* Sources */,
+				847034CA28764EB300D58193 /* Frameworks */,
+				847034CB28764EB300D58193 /* Resources */,
+				76039FEC686A90CE40DE7A0E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847034CF28764EB300D58193 /* PBXTargetDependency */,
+			);
+			name = SocialNetworkAstroUITests;
+			productName = SocialNetworkAstroUITests;
+			productReference = 847034CD28764EB300D58193 /* SocialNetworkAstroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		847034A228764EB000D58193 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					847034A928764EB100D58193 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					847034C228764EB300D58193 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 847034A928764EB100D58193;
+					};
+					847034CC28764EB300D58193 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 847034A928764EB100D58193;
+					};
+				};
+			};
+			buildConfigurationList = 847034A528764EB000D58193 /* Build configuration list for PBXProject "SocialNetworkAstro" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 847034A128764EB000D58193;
+			packageReferences = (
+				8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 847034AB28764EB100D58193 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				847034A928764EB100D58193 /* SocialNetworkAstro */,
+				847034C228764EB300D58193 /* SocialNetworkAstroTests */,
+				847034CC28764EB300D58193 /* SocialNetworkAstroUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		847034A828764EB100D58193 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841717B628879CB100321BA7 /* HomeTableViewCell.xib in Resources */,
+				84241078288A532800CE869D /* PostDetailViewController.xib in Resources */,
+				8435C842287C8C5D00A9D108 /* ProfileViewController.xib in Resources */,
+				84F9D7CD288F81E200D508A2 /* FriendTableViewCell.xib in Resources */,
+				8435C825287787A100A9D108 /* SignUpViewController.xib in Resources */,
+				84F9D7E42898637400D508A2 /* EditProfileViewController.xib in Resources */,
+				847034BD28764EB200D58193 /* LaunchScreen.storyboard in Resources */,
+				84F9D7DD28973E8C00D508A2 /* EditPostViewController.xib in Resources */,
+				84F9D7C8288A6C7D00D508A2 /* PostDetailTableViewCell.xib in Resources */,
+				8435C80C28774BE100A9D108 /* GoogleService-Info.plist in Resources */,
+				8435C859287C96EE00A9D108 /* AddFriendViewController.xib in Resources */,
+				8435C851287C94F200A9D108 /* NewPostViewController.xib in Resources */,
+				8435C849287C918300A9D108 /* TabBarViewController.xib in Resources */,
+				847034BA28764EB200D58193 /* Assets.xcassets in Resources */,
+				8435C83E287C8B0800A9D108 /* HomeViewController.xib in Resources */,
+				847034B528764EB100D58193 /* Main.storyboard in Resources */,
+				84F9D7D62895C4DC00D508A2 /* ProfilePostTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847034C128764EB300D58193 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847034CB28764EB300D58193 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1092E9C96561384427500ED2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialNetworkAstro-SocialNetworkAstroUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76039FEC686A90CE40DE7A0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialNetworkAstro-SocialNetworkAstroUITests/Pods-SocialNetworkAstro-SocialNetworkAstroUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialNetworkAstro-SocialNetworkAstroUITests/Pods-SocialNetworkAstro-SocialNetworkAstroUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialNetworkAstro-SocialNetworkAstroUITests/Pods-SocialNetworkAstro-SocialNetworkAstroUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0D5D29B227AD0B791EC6CA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialNetworkAstro/Pods-SocialNetworkAstro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialNetworkAstro/Pods-SocialNetworkAstro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialNetworkAstro/Pods-SocialNetworkAstro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD46BF1A2E9DED96A7076AB4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialNetworkAstro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E13407D35B0C37970BF4070E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialNetworkAstroTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		847034A628764EB100D58193 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F9D7C4288A66FF00D508A2 /* PostDetail.swift in Sources */,
+				8435C85F287CA62900A9D108 /* BaseModel.swift in Sources */,
+				8435C7F62877480800A9D108 /* SocialNetworkAstro.xcdatamodeld in Sources */,
+				84F9D7D52895C4DC00D508A2 /* ProfilePostTableViewCell.swift in Sources */,
+				847034B828764EB100D58193 /* SocialNetworkAstro.xcdatamodeld in Sources */,
+				84241074288A00E400CE869D /* HomeViewModel.swift in Sources */,
+				8435C7F82877480800A9D108 /* AppDelegate.swift in Sources */,
+				8435C850287C94F200A9D108 /* NewPostViewController.swift in Sources */,
+				84F9D7DC28973E8C00D508A2 /* EditPostViewController.swift in Sources */,
+				8435C81C2877574800A9D108 /* LoginViewController.swift in Sources */,
+				841717B528879CB100321BA7 /* HomeTableViewCell.swift in Sources */,
+				8435C85B287CA46900A9D108 /* FirebaseManager.swift in Sources */,
+				8435C83D287C8B0800A9D108 /* HomeViewController.swift in Sources */,
+				8435C85E287CA62900A9D108 /* User.swift in Sources */,
+				8435C858287C96EE00A9D108 /* AddFriendViewController.swift in Sources */,
+				84F9D7D02890ED1F00D508A2 /* AddFriendViewModel.swift in Sources */,
+				847034AE28764EB100D58193 /* AppDelegate.swift in Sources */,
+				8435C841287C8C5D00A9D108 /* ProfileViewController.swift in Sources */,
+				84CDEC452881031800D4111A /* Post.swift in Sources */,
+				84CDEC3F2880AC6D00D4111A /* NewPost.swift in Sources */,
+				8435C865287DDE3700A9D108 /* EncodableExtension.swift in Sources */,
+				84241077288A532800CE869D /* PostDetailViewController.swift in Sources */,
+				847034B028764EB100D58193 /* SceneDelegate.swift in Sources */,
+				8435C824287787A100A9D108 /* SignUpViewController.swift in Sources */,
+				8435C82A2877887500A9D108 /* Register.swift in Sources */,
+				8435C848287C918300A9D108 /* TabBarViewController.swift in Sources */,
+				84F9D7DF2897437800D508A2 /* EditPostViewModel.swift in Sources */,
+				84F9D7D22890F07700D508A2 /* UserFollowedDetail.swift in Sources */,
+				84CDEC432880D95A00D4111A /* User+CoreDataProperties.swift in Sources */,
+				84F9D7C2288A60BA00D508A2 /* PostDetailViewModel.swift in Sources */,
+				84F9D7E628986F4800D508A2 /* EditProfileViewModel.swift in Sources */,
+				8435C7FA2877480800A9D108 /* SceneDelegate.swift in Sources */,
+				8435C81E28777AE300A9D108 /* Login.swift in Sources */,
+				84F9D7D82895C8FD00D508A2 /* ProfileViewModel.swift in Sources */,
+				84F9D7CC288F81E200D508A2 /* FriendTableViewCell.swift in Sources */,
+				84CDEC422880D95A00D4111A /* User+CoreDataClass.swift in Sources */,
+				84F9D7E32898637400D508A2 /* EditProfileViewController.swift in Sources */,
+				84F9D7C7288A6C7D00D508A2 /* PostDetailTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847034BF28764EB300D58193 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847034C828764EB300D58193 /* SocialNetworkAstroTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		847034C928764EB300D58193 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847034D428764EB300D58193 /* SocialNetworkAstroUITestsLaunchTests.swift in Sources */,
+				847034D228764EB300D58193 /* SocialNetworkAstroUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		847034C528764EB300D58193 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847034A928764EB100D58193 /* SocialNetworkAstro */;
+			targetProxy = 847034C428764EB300D58193 /* PBXContainerItemProxy */;
+		};
+		847034CF28764EB300D58193 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 847034A928764EB100D58193 /* SocialNetworkAstro */;
+			targetProxy = 847034CE28764EB300D58193 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8435C7E92877480800A9D108 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8435C7EA2877480800A9D108 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8435C7EB2877480800A9D108 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8435C7EC2877480800A9D108 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		847034B328764EB100D58193 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847034B428764EB100D58193 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		847034BB28764EB200D58193 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				847034BC28764EB200D58193 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		847034D528764EB300D58193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		847034D628764EB300D58193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		847034D828764EB300D58193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA36A4AA4C811451159BFC4E /* Pods-SocialNetworkAstro.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZDW6WVD65C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SocialNetworkAstro/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jalasoft.test.SocialNetworkAstro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		847034D928764EB300D58193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69E4B3A7ECA54F0225CDDE7B /* Pods-SocialNetworkAstro.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZDW6WVD65C;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SocialNetworkAstro/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jalasoft.test.SocialNetworkAstro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		847034DB28764EB300D58193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45096EA8F6965947037945E8 /* Pods-SocialNetworkAstroTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZDW6WVD65C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jalasoft.test.SocialNetworkAstroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialNetworkAstro.app/SocialNetworkAstro";
+			};
+			name = Debug;
+		};
+		847034DC28764EB300D58193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BC09F31E58DA53800F84D54 /* Pods-SocialNetworkAstroTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZDW6WVD65C;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jalasoft.test.SocialNetworkAstroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialNetworkAstro.app/SocialNetworkAstro";
+			};
+			name = Release;
+		};
+		847034DE28764EB300D58193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5012C0038D0ABBBE91625EC /* Pods-SocialNetworkAstro-SocialNetworkAstroUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZDW6WVD65C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jalasoft.test.SocialNetworkAstroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SocialNetworkAstro;
+			};
+			name = Debug;
+		};
+		847034DF28764EB300D58193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F27D7C781D43890EFA150152 /* Pods-SocialNetworkAstro-SocialNetworkAstroUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZDW6WVD65C;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jalasoft.test.SocialNetworkAstroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SocialNetworkAstro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		847034A528764EB000D58193 /* Build configuration list for PBXProject "SocialNetworkAstro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847034D528764EB300D58193 /* Debug */,
+				847034D628764EB300D58193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847034D728764EB300D58193 /* Build configuration list for PBXNativeTarget "SocialNetworkAstro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847034D828764EB300D58193 /* Debug */,
+				847034D928764EB300D58193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847034DA28764EB300D58193 /* Build configuration list for PBXNativeTarget "SocialNetworkAstroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847034DB28764EB300D58193 /* Debug */,
+				847034DC28764EB300D58193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		847034DD28764EB300D58193 /* Build configuration list for PBXNativeTarget "SocialNetworkAstroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847034DE28764EB300D58193 /* Debug */,
+				847034DF28764EB300D58193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		841717B82887A7EF00321BA7 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		841717BA2887B78400321BA7 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		8435C80E28774CDD00A9D108 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8435C81028774CDD00A9D108 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		8435C81228774CDD00A9D108 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8435C81428774CDD00A9D108 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8435C80D28774CDD00A9D108 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8435C7ED2877480800A9D108 /* SocialNetworkAstro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8435C7EE2877480800A9D108 /* SocialNetworkAstro.xcdatamodel */,
+			);
+			currentVersion = 8435C7EE2877480800A9D108 /* SocialNetworkAstro.xcdatamodel */;
+			path = SocialNetworkAstro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		847034B628764EB100D58193 /* SocialNetworkAstro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				847034B728764EB100D58193 /* SocialNetworkAstro.xcdatamodel */,
+			);
+			currentVersion = 847034B728764EB100D58193 /* SocialNetworkAstro.xcdatamodel */;
+			path = SocialNetworkAstro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 847034A228764EB000D58193 /* Project object */;
+}
