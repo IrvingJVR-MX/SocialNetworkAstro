@@ -20,21 +20,40 @@ class ProfileViewController: UIViewController {
                     self?.profileImageView.kf.setImage(with: url)
                }
                 self?.profileNameLabel.text =  self?.profileViewModel.userObject?.name ?? ""
-                
+            }
+        }
+        
+        profileViewModel.notifyFetchedUserInfo = { [weak self] () in
+            if self?.profileViewModel.fetchedUpdatedUserInfo == true {
+                if let url = URL (string: self?.profileViewModel.userObject?.photoUrl ?? ""){
+                    self?.profileImageView.kf.setImage(with: url)
+               }
+                self?.profileNameLabel.text =  self?.profileViewModel.userObject?.name ?? ""
             }
         }
     }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        profileViewModel.getUpdatedUserInfo()
+    }
+        
 
     @IBAction func editProfileButton(_ sender: Any) {
+        let editProfile = EditProfileViewController()
+        editProfile.user = profileViewModel.userObject
+        show(editProfile, sender: nil)
     }
     
     @IBAction func logOutButton(_ sender: Any) {
         //profileViewModel.deleteUserInfo()
-        self.navigationController?.popViewController(animated: true)
-      /*  self.dismiss(animated: false)
+        //self.navigationController?.popViewController(animated: true)
+      /* self.dismiss(animated: false)
         guard   let controllerC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as?
         LoginViewController else{ return }
-        self.present(controllerC, animated: true, completion: nil)*/
+        self.present(controllerC, animated: true, completion: nil)
+       */
     }
     
     

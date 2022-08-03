@@ -15,7 +15,16 @@ public class ProfileViewModel {
             notifyFetchedPost()
         }
     }
+    
+    var notifyFetchedUserInfo = { () -> () in}
+    var fetchedUpdatedUserInfo : Bool = false {
+        didSet {
+            notifyFetchedUserInfo()
+        }
+    }
     var userObject: User?
+    
+    
     
     func fecthData(){
         db.collection("Post").whereField("userID",  isEqualTo: userObject?.userid ?? "").addSnapshotListener{ (querySnapshot, error) in
@@ -46,6 +55,7 @@ public class ProfileViewModel {
         })
     }
     
+    
     func getUserInfo(){
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
          let context = appDelegate.persistentContainer.viewContext
@@ -55,11 +65,27 @@ public class ProfileViewModel {
              if dbUser[0].userid != nil {
                  userObject = dbUser[0]
                  fecthData()
+                 
              }
          }catch(let error){
              print ("error", error)
          }
        }
+    
+    func getUpdatedUserInfo(){
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<User>(entityName: "User")
+        do{
+            let dbUser = try context.fetch(fetchRequest)
+            if dbUser[0].userid != nil {
+                userObject = dbUser[0]
+                self.fetchedUpdatedUserInfo = true
+            }
+        }catch(let error){
+            print ("error", error)
+        }
+    }
     
     func deleteUserInfo(){
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }

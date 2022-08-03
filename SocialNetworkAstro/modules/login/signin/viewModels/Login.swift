@@ -49,6 +49,7 @@ public class Login {
                     user.photoUrl = userObject?.photoUrl
                     user.name = userObject?.name
                     user.email = userObject?.email
+                    user.photoPath = userObject?.photoPath
                     try context.save()
                 }
             }catch(let error){
@@ -57,6 +58,9 @@ public class Login {
             self.userID = userObject?.id ?? ""
         
     }
+    
+
+    
     
     func checkIfUserIsLoginIn(){
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}

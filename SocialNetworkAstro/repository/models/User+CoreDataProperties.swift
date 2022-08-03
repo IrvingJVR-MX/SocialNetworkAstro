@@ -12,6 +12,7 @@ extension User {
     @NSManaged public var photoUrl: String?
     @NSManaged public var name: String?
     @NSManaged public var email: String?
+    @NSManaged public var photoPath: String?
 
 }
 

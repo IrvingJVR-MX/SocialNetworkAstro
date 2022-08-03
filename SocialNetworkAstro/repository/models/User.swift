@@ -6,6 +6,7 @@ public struct UserF: Codable {
     let email: String
     let createdAt: String
     let photoUrl: String
+    let photoPath: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -13,6 +14,7 @@ public struct UserF: Codable {
         case email
         case createdAt
         case photoUrl
+        case photoPath
     }
 
     var dictionary: [String: Any] {

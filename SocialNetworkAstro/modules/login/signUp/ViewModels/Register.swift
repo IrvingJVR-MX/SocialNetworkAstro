@@ -27,26 +27,28 @@ public class Register {
     
     func savePhoto(_ userId:String, _ username : String, _ email: String){
         guard let imageDataStorage = imageData else{ return }
-        storage.child(userId + "/ProfilePhoto/"+"ProfilePhoto"+".png").putData(imageDataStorage, metadata: nil, completion: { _, error in
+        let timestamp = NSDate().timeIntervalSince1970
+        storage.child(userId + "/ProfilePhoto/"+"ProfilePhoto"+"\(timestamp)"+".png").putData(imageDataStorage, metadata: nil, completion: { _, error in
             guard error == nil else{
                 self.registerUser = false
                 return
             }
-            self.storage.child(userId + "/ProfilePhoto/"+"ProfilePhoto"+".png").downloadURL(completion: { url, error in
+            self.storage.child(userId + "/ProfilePhoto/"+"ProfilePhoto"+"\(timestamp)"+".png").downloadURL(completion: { url, error in
                            guard let url = url, error == nil else{
                                return
                            }
-                            self.createUser( userId , username, email,  url.absoluteString  )
+                            let path = userId + "/ProfilePhoto/"+"ProfilePhoto"+"\(timestamp)"+".png"
+                            self.createUser( userId , username, email,  url.absoluteString, path  )
                       })
         })
     }
     
 
-    func createUser (_ userId:String, _ userName:String, _ email:String, _ url: String ) {
+    func createUser (_ userId:String, _ userName:String, _ email:String, _ url: String , _ path: String ) {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY/MM/dd"
-        let user = UserF(id: userId, name: userName, email: email, createdAt: dateFormatter.string(from: date), photoUrl: url)
+        let user = UserF(id: userId, name: userName, email: email, createdAt: dateFormatter.string(from: date), photoUrl: url, photoPath: path)
         let newFirebaseDocument = db.collection("Users").document(userId)
         let fakeFollowed = userFollowedDetail(id: "", name: "", profilePhotoUrl: "" )
         newFirebaseDocument.setData(user.dictionary)
