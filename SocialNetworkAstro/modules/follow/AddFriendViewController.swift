@@ -61,7 +61,6 @@ extension AddFriendViewController:  UITableViewDataSource, UITableViewDelegate {
             }
             cell.profileNameLabel.text = addFriendViewModel.usersToFollow[indexPath.row].name
             cell.followButton.setTitle("Follow", for: .normal)
-            cell.messageButton.isHidden = true
             cell.followButton.removeTarget(self, action: #selector(unFollowUser(sender:)), for: .touchUpInside)
             cell.followButton.addTarget(self, action: #selector(followUser(sender:)), for: .touchUpInside)
             cell.followButton.tag = indexPath.row

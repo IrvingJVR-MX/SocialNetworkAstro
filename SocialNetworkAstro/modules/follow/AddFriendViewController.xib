@@ -37,20 +37,20 @@
                                     </connections>
                                 </segmentedControl>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cGf-Mu-8eW">
-                                    <rect key="frame" x="0.0" y="43" width="414" height="653"/>
+                                    <rect key="frame" x="8" y="43" width="398" height="653"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="cGf-Mu-8eW" firstAttribute="top" secondItem="WLT-Ne-AiR" secondAttribute="bottom" constant="12" id="2Ug-qF-OBP"/>
                                 <constraint firstItem="WLT-Ne-AiR" firstAttribute="top" secondItem="EK8-4M-7YD" secondAttribute="top" id="6VK-Dq-ah6"/>
                                 <constraint firstItem="WLT-Ne-AiR" firstAttribute="leading" secondItem="EK8-4M-7YD" secondAttribute="leading" id="850-pp-FOf"/>
                                 <constraint firstAttribute="trailing" secondItem="WLT-Ne-AiR" secondAttribute="trailing" id="DwA-eE-hmd"/>
+                                <constraint firstAttribute="bottom" secondItem="cGf-Mu-8eW" secondAttribute="bottom" constant="4" id="EUs-Cn-5mm"/>
                                 <constraint firstAttribute="height" constant="700" id="Ite-je-Ld2"/>
-                                <constraint firstAttribute="trailing" secondItem="cGf-Mu-8eW" secondAttribute="trailing" id="Vh6-PW-t8l"/>
-                                <constraint firstAttribute="bottom" secondItem="cGf-Mu-8eW" secondAttribute="bottom" constant="4" id="aT7-vf-vBI"/>
-                                <constraint firstItem="cGf-Mu-8eW" firstAttribute="top" secondItem="WLT-Ne-AiR" secondAttribute="bottom" constant="12" id="vcF-7t-x4f"/>
-                                <constraint firstItem="cGf-Mu-8eW" firstAttribute="leading" secondItem="EK8-4M-7YD" secondAttribute="leading" id="zSp-SW-FnA"/>
+                                <constraint firstAttribute="trailing" secondItem="cGf-Mu-8eW" secondAttribute="trailing" constant="8" id="L4P-tM-Y2X"/>
+                                <constraint firstItem="cGf-Mu-8eW" firstAttribute="leading" secondItem="EK8-4M-7YD" secondAttribute="leading" constant="8" id="Vpi-DT-IbD"/>
                             </constraints>
                         </view>
                     </subviews>
