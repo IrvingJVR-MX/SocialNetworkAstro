@@ -3,7 +3,8 @@ import Kingfisher
 class PostDetailViewController: UIViewController {
 
     @IBOutlet weak var postImageView: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var descriptionTexView: UITextView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
@@ -19,7 +20,7 @@ class PostDetailViewController: UIViewController {
         if let url = URL (string: post?.photoURL ?? "" ){
             postImageView.kf.setImage(with: url)
         }
-        descriptionLabel.text = post?.description
+        descriptionTexView.text = post?.description
         
         postDetailViewModel.fecthData(post?.postId ?? "")
         postDetailViewModel.notifyFetchedPost = { [weak self] () in
