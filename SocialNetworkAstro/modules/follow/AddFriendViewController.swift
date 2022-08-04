@@ -2,8 +2,10 @@ import UIKit
 import Kingfisher
 class AddFriendViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+   
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
+    
     var addFriendViewModel = AddFriendViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -3,8 +3,7 @@ import FirebaseStorage
 import SwiftUI
 class NewPostViewController: UIViewController {
 
-    @IBOutlet weak var addPhotoButton: UIButton!
-    @IBOutlet weak var imageViewer: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
     
@@ -20,7 +19,7 @@ class NewPostViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                     self?.textView.text = ""
                     self?.titleTextField.text = ""
-                    self?.imageViewer.image = nil
+                    self?.imageView.image = nil
                     self?.tabBarController?.selectedIndex = 0
                 }))
                 self?.present(alert, animated: true, completion: nil)
@@ -28,6 +27,12 @@ class NewPostViewController: UIViewController {
         }
         textView.text = "Please Add Text ..."
         textView.textColor = UIColor.lightGray
+        textView.layer.cornerRadius = 8;
+        textView.layer.borderColor = UIColor.lightGray.cgColor
+        textView.layer.borderWidth = 1
+        imageView.layer.borderColor =  UIColor.lightGray.cgColor
+        imageView.layer.borderWidth = 0.5
+
     
     }
     
@@ -48,8 +53,9 @@ class NewPostViewController: UIViewController {
     
     @IBAction func discardPost(_ sender: Any) {
         textView.text = ""
-        imageViewer.image = nil
-        self.tabBarController?.selectedIndex = 0
+        titleTextField.text = ""
+        imageView.image = nil
+      //  self.tabBarController?.selectedIndex = 0
     }
     
 
@@ -77,7 +83,7 @@ extension NewPostViewController : UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-                imageViewer.image = image
+                imageView.image = image
                 newPost.imageData = image.pngData()
             }
         picker.dismiss(animated: true, completion: nil)

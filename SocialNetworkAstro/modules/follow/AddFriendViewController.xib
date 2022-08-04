@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddFriendsViewController" customModule="SocialNetworkAstro" customModuleProvider="target">
             <connections>
-                <outlet property="segmentedControl" destination="HfS-Iq-wdX" id="QWb-ud-kln"/>
-                <outlet property="tableView" destination="7dh-L8-yaS" id="Yb4-89-cCF"/>
+                <outlet property="segmentedControl" destination="WLT-Ne-AiR" id="XTi-gE-1ws"/>
+                <outlet property="tableView" destination="cGf-Mu-8eW" id="TKP-v1-AlN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,31 +20,58 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HfS-Iq-wdX">
-                    <rect key="frame" x="0.0" y="64" width="414" height="32"/>
-                    <segments>
-                        <segment title="People you may know"/>
-                        <segment title="Followed"/>
-                    </segments>
-                    <connections>
-                        <action selector="segmentedChanged:" destination="-1" eventType="valueChanged" id="8bF-2H-RWJ"/>
-                    </connections>
-                </segmentedControl>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7dh-L8-yaS">
-                    <rect key="frame" x="0.0" y="115" width="414" height="697"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hkb-2N-mIg">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EK8-4M-7YD">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="700"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WLT-Ne-AiR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="32"/>
+                                    <segments>
+                                        <segment title="People you may know"/>
+                                        <segment title="Followed"/>
+                                    </segments>
+                                    <connections>
+                                        <action selector="segmentedChanged:" destination="-1" eventType="valueChanged" id="8s3-5D-4fI"/>
+                                    </connections>
+                                </segmentedControl>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cGf-Mu-8eW">
+                                    <rect key="frame" x="0.0" y="43" width="414" height="653"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="WLT-Ne-AiR" firstAttribute="top" secondItem="EK8-4M-7YD" secondAttribute="top" id="6VK-Dq-ah6"/>
+                                <constraint firstItem="WLT-Ne-AiR" firstAttribute="leading" secondItem="EK8-4M-7YD" secondAttribute="leading" id="850-pp-FOf"/>
+                                <constraint firstAttribute="trailing" secondItem="WLT-Ne-AiR" secondAttribute="trailing" id="DwA-eE-hmd"/>
+                                <constraint firstAttribute="height" constant="700" id="Ite-je-Ld2"/>
+                                <constraint firstAttribute="trailing" secondItem="cGf-Mu-8eW" secondAttribute="trailing" id="Vh6-PW-t8l"/>
+                                <constraint firstAttribute="bottom" secondItem="cGf-Mu-8eW" secondAttribute="bottom" constant="4" id="aT7-vf-vBI"/>
+                                <constraint firstItem="cGf-Mu-8eW" firstAttribute="top" secondItem="WLT-Ne-AiR" secondAttribute="bottom" constant="12" id="vcF-7t-x4f"/>
+                                <constraint firstItem="cGf-Mu-8eW" firstAttribute="leading" secondItem="EK8-4M-7YD" secondAttribute="leading" id="zSp-SW-FnA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EK8-4M-7YD" firstAttribute="leading" secondItem="Hkb-2N-mIg" secondAttribute="leading" id="3dz-0G-mxN"/>
+                        <constraint firstAttribute="bottom" secondItem="EK8-4M-7YD" secondAttribute="bottom" id="B6b-QL-CK7"/>
+                        <constraint firstItem="EK8-4M-7YD" firstAttribute="top" secondItem="Hkb-2N-mIg" secondAttribute="top" id="Chm-vZ-2UL"/>
+                        <constraint firstAttribute="trailing" secondItem="EK8-4M-7YD" secondAttribute="trailing" id="GDd-SE-kYW"/>
+                        <constraint firstItem="EK8-4M-7YD" firstAttribute="width" secondItem="Hkb-2N-mIg" secondAttribute="width" id="foT-g1-DEK"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="OPu-GU-cZE"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="bqv-Ag-fDU"/>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="HfS-Iq-wdX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4ju-la-N2E"/>
-                <constraint firstItem="HfS-Iq-wdX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="7ba-6s-MsY"/>
-                <constraint firstItem="7dh-L8-yaS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CG7-Hw-Yyi"/>
-                <constraint firstItem="7dh-L8-yaS" firstAttribute="top" secondItem="HfS-Iq-wdX" secondAttribute="bottom" constant="20" id="L8C-n5-bjQ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7dh-L8-yaS" secondAttribute="bottom" constant="50" id="MPb-JW-Fjw"/>
-                <constraint firstItem="7dh-L8-yaS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UJN-gC-Odg"/>
-                <constraint firstItem="HfS-Iq-wdX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="Ulo-dR-N8j"/>
+                <constraint firstItem="Hkb-2N-mIg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Jg8-UY-6A7"/>
+                <constraint firstItem="Hkb-2N-mIg" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="VpT-Ji-1bd"/>
+                <constraint firstItem="Hkb-2N-mIg" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="iQ6-WV-Uhe"/>
+                <constraint firstItem="Hkb-2N-mIg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oVP-7T-ocb"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="110.49107142857143"/>
         </view>

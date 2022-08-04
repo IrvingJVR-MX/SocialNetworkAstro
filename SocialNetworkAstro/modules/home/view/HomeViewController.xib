@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SocialNetworkAstro" customModuleProvider="target">
             <connections>
-                <outlet property="searchBar" destination="How-au-FSe" id="as8-yy-1SX"/>
-                <outlet property="tableView" destination="VjW-iT-IRm" id="xVL-ZR-8da"/>
+                <outlet property="searchBar" destination="WKp-Ly-vqs" id="Dtu-OA-cHH"/>
+                <outlet property="tableView" destination="wM5-7Q-gzX" id="EHZ-rE-Vg1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,27 +20,54 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="How-au-FSe">
-                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VjW-iT-IRm">
-                    <rect key="frame" x="0.0" y="105" width="414" height="712"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M66-Bs-Ala">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdM-ZS-UiV">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="760"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="WKp-Ly-vqs">
+                                    <rect key="frame" x="0.0" y="8" width="414" height="51"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wM5-7Q-gzX">
+                                    <rect key="frame" x="0.0" y="77" width="414" height="683"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="WKp-Ly-vqs" firstAttribute="leading" secondItem="vdM-ZS-UiV" secondAttribute="leading" id="0NS-hp-hBx"/>
+                                <constraint firstAttribute="trailing" secondItem="wM5-7Q-gzX" secondAttribute="trailing" id="1oF-0h-zlJ"/>
+                                <constraint firstItem="wM5-7Q-gzX" firstAttribute="leading" secondItem="vdM-ZS-UiV" secondAttribute="leading" id="5uA-29-LpY"/>
+                                <constraint firstItem="WKp-Ly-vqs" firstAttribute="top" secondItem="vdM-ZS-UiV" secondAttribute="top" constant="8" id="HA6-BR-vPN"/>
+                                <constraint firstItem="wM5-7Q-gzX" firstAttribute="top" secondItem="WKp-Ly-vqs" secondAttribute="bottom" constant="18" id="V6c-e8-X5b"/>
+                                <constraint firstAttribute="height" constant="760" id="dlF-w3-FEx"/>
+                                <constraint firstAttribute="bottom" secondItem="wM5-7Q-gzX" secondAttribute="bottom" id="ihd-ka-87I"/>
+                                <constraint firstAttribute="trailing" secondItem="WKp-Ly-vqs" secondAttribute="trailing" id="zBJ-6r-15p"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="vdM-ZS-UiV" firstAttribute="leading" secondItem="M66-Bs-Ala" secondAttribute="leading" id="NZV-h2-Y8c"/>
+                        <constraint firstItem="vdM-ZS-UiV" firstAttribute="top" secondItem="M66-Bs-Ala" secondAttribute="top" id="Xxd-JW-kQv"/>
+                        <constraint firstAttribute="bottom" secondItem="vdM-ZS-UiV" secondAttribute="bottom" id="gD8-LH-gEW"/>
+                        <constraint firstItem="vdM-ZS-UiV" firstAttribute="width" secondItem="M66-Bs-Ala" secondAttribute="width" id="kkZ-Yt-vxD"/>
+                        <constraint firstAttribute="trailing" secondItem="vdM-ZS-UiV" secondAttribute="trailing" id="yHv-ct-T8J"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="DD9-LB-Hsq"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="DN5-Dh-zAU"/>
+                </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="VjW-iT-IRm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1dV-xo-1ps"/>
-                <constraint firstItem="How-au-FSe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Qqg-9W-Gif"/>
-                <constraint firstItem="VjW-iT-IRm" firstAttribute="top" secondItem="How-au-FSe" secondAttribute="bottom" constant="10" id="SBQ-CP-7WA"/>
-                <constraint firstItem="How-au-FSe" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="TUO-HI-R5X"/>
-                <constraint firstItem="VjW-iT-IRm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="XZj-2k-Bbs"/>
-                <constraint firstItem="How-au-FSe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fNH-Fe-5Gw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VjW-iT-IRm" secondAttribute="bottom" constant="45" id="qxT-j9-BQr"/>
+                <constraint firstItem="M66-Bs-Ala" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2m6-0I-t3t"/>
+                <constraint firstItem="M66-Bs-Ala" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9zo-TH-3MD"/>
+                <constraint firstItem="M66-Bs-Ala" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="UC2-mM-T8U"/>
+                <constraint firstItem="M66-Bs-Ala" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sfF-zw-6RI"/>
             </constraints>
-            <point key="canvasLocation" x="188" y="112"/>
+            <point key="canvasLocation" x="186.95652173913044" y="111.83035714285714"/>
         </view>
     </objects>
     <resources>
