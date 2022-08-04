@@ -48,7 +48,7 @@ public class ProfileViewModel {
     }
     
     func deletePostImage(_ index: Int){
-        storage.child("PhotoOfPublicacions/"+post[index].postId+".png").delete(completion: { error in
+        storage.child(post[index].photoPath).delete(completion: { error in
             if error == nil{
                 self.deletePost(index)
             }

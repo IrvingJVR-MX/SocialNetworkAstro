@@ -42,16 +42,16 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 </tableView>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cu5-D3-Tmv">
-                                    <rect key="frame" x="8" y="742" width="327" height="34"/>
+                                    <rect key="frame" x="8" y="742" width="297" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsx-JT-zKY">
-                                    <rect key="frame" x="348" y="742" width="58" height="31"/>
+                                    <rect key="frame" x="313" y="742" width="93" height="31"/>
                                     <color key="backgroundColor" name="ColorApp"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="31" id="W8j-ek-tzs"/>
-                                        <constraint firstAttribute="width" constant="58" id="zCf-gh-hqH"/>
+                                        <constraint firstAttribute="width" constant="93" id="zCf-gh-hqH"/>
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
@@ -105,7 +105,7 @@
                                 <constraint firstAttribute="bottom" secondItem="Cu5-D3-Tmv" secondAttribute="bottom" constant="4" id="HPB-K9-LzW"/>
                                 <constraint firstItem="hZA-HF-qf4" firstAttribute="top" secondItem="hY4-Fw-E02" secondAttribute="bottom" constant="15" id="OA5-oD-aLq"/>
                                 <constraint firstItem="Hsx-JT-zKY" firstAttribute="top" secondItem="hZA-HF-qf4" secondAttribute="bottom" constant="19" id="Rwu-Vj-92G"/>
-                                <constraint firstItem="Hsx-JT-zKY" firstAttribute="leading" secondItem="Cu5-D3-Tmv" secondAttribute="trailing" constant="13" id="TAD-IG-OnE"/>
+                                <constraint firstItem="Hsx-JT-zKY" firstAttribute="leading" secondItem="Cu5-D3-Tmv" secondAttribute="trailing" constant="8" id="TAD-IG-OnE"/>
                                 <constraint firstItem="hZA-HF-qf4" firstAttribute="leading" secondItem="34V-re-d7k" secondAttribute="leading" constant="9" id="USL-4E-ee0"/>
                                 <constraint firstItem="Cu5-D3-Tmv" firstAttribute="top" secondItem="hZA-HF-qf4" secondAttribute="bottom" constant="19" id="cPx-Cs-Ink"/>
                                 <constraint firstItem="blR-1U-aAi" firstAttribute="top" secondItem="JzF-N8-8lJ" secondAttribute="bottom" constant="9" id="geQ-x2-OwG"/>

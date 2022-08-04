@@ -91,6 +91,7 @@ extension ProfileViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProfilePostTableViewCell") as? ProfilePostTableViewCell ?? ProfilePostTableViewCell(style: .subtitle, reuseIdentifier: "ProfilePostTableViewCell")
+        cell.selectionStyle = .none
         cell.postNameLabel.text = profileViewModel.post[indexPath.row].postTitle
         if let url = URL (string: profileViewModel.post[indexPath.row].photoURL){
             cell.postImageView.kf.setImage(with: url)
@@ -98,8 +99,8 @@ extension ProfileViewController:  UITableViewDataSource, UITableViewDelegate {
         cell.postDescriptionTextView.text = profileViewModel.post[indexPath.row].description
         cell.commentButton.addTarget(self, action: #selector(commentPost(sender:)), for: .touchUpInside)
         cell.commentButton.tag = indexPath.row
-        cell.deletePostButton.addTarget(self, action: #selector(deletePost(sender:)), for: .touchUpInside)
-        cell.deletePostButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(deletePost(sender:)), for: .touchUpInside)
+        cell.deleteButton.tag = indexPath.row
         cell.editButton.addTarget(self, action: #selector(editPost(sender:)), for: .touchUpInside)
         cell.editButton.tag = indexPath.row
 

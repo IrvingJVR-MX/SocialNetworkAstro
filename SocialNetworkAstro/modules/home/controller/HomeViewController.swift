@@ -2,6 +2,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import Kingfisher
+import SwiftUI
 class HomeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +21,7 @@ class HomeViewController: UIViewController {
                self?.tableView.reloadData()
             }
         }
+
     }
 
 }
@@ -39,6 +41,7 @@ extension HomeViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as? HomeTableViewCell ?? HomeTableViewCell(style: .subtitle, reuseIdentifier: "HomeTableViewCell")
+        cell.selectionStyle = .none
         if let url = URL (string: homeViewModel.post[indexPath.row].profilePhotoUrl){
             cell.profilePhotoImageVIew.kf.setImage(with: url)
         }

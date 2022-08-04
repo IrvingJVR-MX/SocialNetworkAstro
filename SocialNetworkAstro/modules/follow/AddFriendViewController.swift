@@ -54,6 +54,7 @@ extension AddFriendViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendTableViewCell") as? FriendTableViewCell ?? FriendTableViewCell (style: .subtitle, reuseIdentifier: "FriendTableViewCell")
+        cell.selectionStyle = .none
         switch segmentedControl.selectedSegmentIndex {
         case 0 :
             if let url = URL (string: addFriendViewModel.usersToFollow[indexPath.row].photoUrl){

@@ -45,54 +45,55 @@
                             <constraint firstAttribute="height" constant="233" id="EvQ-h7-OC9"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPc-Uj-VjP">
-                        <rect key="frame" x="88" y="302" width="44" height="31"/>
-                        <color key="tintColor" systemColor="systemRedColor"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zT0-hq-9jB">
-                        <rect key="frame" x="12" y="302" width="47" height="31"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="message.fill" catalog="system"/>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeP-6T-x9v">
-                        <rect key="frame" x="165.5" y="303" width="42.5" height="31"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
-                    </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bmR-1h-mYW">
+                        <rect key="frame" x="35" y="302" width="201" height="31"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zT0-hq-9jB">
+                                <rect key="frame" x="0.0" y="0.0" width="47" height="31"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="message.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeP-6T-x9v">
+                                <rect key="frame" x="77" y="0.0" width="47" height="31"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B57-qz-O3S">
+                                <rect key="frame" x="154" y="0.0" width="47" height="31"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="201" id="O5d-mc-xy6"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="BeP-6T-x9v" secondAttribute="trailing" constant="276" id="1EB-yh-Spw"/>
                     <constraint firstItem="UOl-nf-UyK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="2RQ-di-ygk"/>
-                    <constraint firstAttribute="bottom" secondItem="BeP-6T-x9v" secondAttribute="bottom" constant="15" id="8LX-L0-rQy"/>
-                    <constraint firstItem="CPc-Uj-VjP" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="18" id="8ej-fN-ttf"/>
+                    <constraint firstItem="bmR-1h-mYW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="35" id="Amn-G5-KVz"/>
                     <constraint firstItem="UOl-nf-UyK" firstAttribute="top" secondItem="Utw-5c-oRP" secondAttribute="bottom" constant="6" id="CEE-9f-N8y"/>
                     <constraint firstItem="nNM-wS-SKE" firstAttribute="leading" secondItem="UOl-nf-UyK" secondAttribute="trailing" constant="9" id="CQL-WF-XVN"/>
                     <constraint firstAttribute="trailing" secondItem="nNM-wS-SKE" secondAttribute="trailing" constant="35" id="Euc-xg-0Ay"/>
-                    <constraint firstAttribute="bottom" secondItem="zT0-hq-9jB" secondAttribute="bottom" constant="16" id="FSx-vW-e99"/>
                     <constraint firstItem="Utw-5c-oRP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="FmQ-qk-gcr"/>
                     <constraint firstAttribute="trailing" secondItem="Utw-5c-oRP" secondAttribute="trailing" constant="36" id="Ful-Dz-Qaw"/>
-                    <constraint firstItem="CPc-Uj-VjP" firstAttribute="leading" secondItem="zT0-hq-9jB" secondAttribute="trailing" constant="29" id="IGs-D3-mkA"/>
-                    <constraint firstItem="zT0-hq-9jB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="IQE-TG-3xW"/>
                     <constraint firstAttribute="bottom" secondItem="nNM-wS-SKE" secondAttribute="bottom" constant="69" id="Lf7-Vn-pve"/>
-                    <constraint firstItem="BeP-6T-x9v" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="19" id="Mb0-31-f8I"/>
-                    <constraint firstItem="CPc-Uj-VjP" firstAttribute="leading" secondItem="zT0-hq-9jB" secondAttribute="trailing" constant="29" id="TIV-a6-ZaM"/>
                     <constraint firstItem="nNM-wS-SKE" firstAttribute="leading" secondItem="UOl-nf-UyK" secondAttribute="trailing" constant="9" id="aau-1L-L2a"/>
+                    <constraint firstItem="bmR-1h-mYW" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="18" id="biu-Qb-WUe"/>
+                    <constraint firstAttribute="trailing" secondItem="bmR-1h-mYW" secondAttribute="trailing" constant="248" id="fCS-j7-Ksj"/>
                     <constraint firstItem="Utw-5c-oRP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="27" id="jtR-GN-T8W"/>
                     <constraint firstItem="UOl-nf-UyK" firstAttribute="top" secondItem="Utw-5c-oRP" secondAttribute="bottom" constant="6" id="pOJ-kz-9h5"/>
-                    <constraint firstAttribute="bottom" secondItem="CPc-Uj-VjP" secondAttribute="bottom" constant="16" id="qEz-re-RJR"/>
                     <constraint firstItem="nNM-wS-SKE" firstAttribute="top" secondItem="Utw-5c-oRP" secondAttribute="bottom" constant="24" id="sOD-jH-cI4"/>
-                    <constraint firstItem="zT0-hq-9jB" firstAttribute="top" secondItem="UOl-nf-UyK" secondAttribute="bottom" constant="18" id="wTr-M9-0Qb"/>
-                    <constraint firstItem="BeP-6T-x9v" firstAttribute="leading" secondItem="CPc-Uj-VjP" secondAttribute="trailing" constant="33.5" id="xO0-2j-3kx"/>
+                    <constraint firstAttribute="bottom" secondItem="bmR-1h-mYW" secondAttribute="bottom" constant="16" id="xLB-f2-MDj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentButton" destination="zT0-hq-9jB" id="SJF-nK-ai8"/>
-                <outlet property="deletePostButton" destination="CPc-Uj-VjP" id="IZc-yW-3Jd"/>
+                <outlet property="deleteButton" destination="B57-qz-O3S" id="Q4Q-6S-BAc"/>
                 <outlet property="editButton" destination="BeP-6T-x9v" id="dve-MW-01e"/>
                 <outlet property="postDescriptionTextView" destination="nNM-wS-SKE" id="9Bq-2k-04U"/>
                 <outlet property="postImageView" destination="UOl-nf-UyK" id="1b0-4T-KCU"/>
