@@ -10,15 +10,77 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    static weak var shared: SceneDelegate?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        Self.shared = self
+        setupRootControllerIfNeeded(validUser: false)
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
+    func setupRootControllerIfNeeded(validUser: Bool) {
+        // TODO: - User real data to check if there is a valid user.
+        if validUser {
+            // Create VC for TabBar
+            let rootViewController = getRootViewControllerForValidUser()
+            self.window?.rootViewController = rootViewController
+        } else {
+            let rootViewController = getRootViewControllerForInvalidUser()
+            self.window?.rootViewController = rootViewController
+        }
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func getRootViewControllerForInvalidUser() -> UIViewController {
+        return createNavController(for: LoginViewController(), title: "Sing In", image: UIImage(systemName: "newspaper.fill")!)
+    }
+    
+    func getRootViewControllerForValidUser() -> UIViewController {
+        // Create TabBarVC
+        let tabBarVC = UITabBarController()
+        tabBarVC.view.backgroundColor = .systemBackground
+        UITabBar.appearance().barTintColor = .systemBackground
+        tabBarVC.tabBar.tintColor = UIColor(named: "primary")
+        tabBarVC.viewControllers = [
+            createNavController(for: HomeViewController(), title: "Home", image: UIImage(systemName: "house")!),
+            
+            createNavController(for: NewPostViewController(), title: "New Post", image: UIImage(systemName: "plus.app.fill")!),
+            
+            createNavController(for: AddFriendViewController(), title: "Follow", image: UIImage(systemName: "person.fill.badge.plus")!),
+            
+            createNavController(for: ProfileViewController(), title: "Profile", image: UIImage(systemName: "person.fill")!)
+        ]
+        
+        return tabBarVC
+    }
+    
+    fileprivate func createNavController(for rootViewController: UIViewController,
+                                         title: String,
+                                         image: UIImage) -> UIViewController {
+        let navController = UINavigationController(rootViewController: rootViewController)
+        navController.tabBarItem.title = title
+        navController.tabBarItem.image = image
+
+    
+        navController.navigationBar.tintColor = .black
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(named: "primary")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+
+        navController.navigationBar.standardAppearance = appearance
+        navController.navigationBar.scrollEdgeAppearance = appearance
+        
+        navController.modalPresentationStyle = .overFullScreen
+        
+        
+        rootViewController.navigationItem.title = title
+        
+        
+        return navController
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

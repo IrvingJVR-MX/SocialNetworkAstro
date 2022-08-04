@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 
 class SignUpViewController: UIViewController {
 
@@ -13,6 +14,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         register.register = { [weak self] () in
             if self?.register.registerUser == true {
+                SVProgressHUD.dismiss()
                 let alert = UIAlertController(title: "Successful", message: "User registered successfully", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                     self?.signUpSuccessful()
@@ -29,23 +31,23 @@ class SignUpViewController: UIViewController {
         let vc = UIImagePickerController ()
         vc.sourceType = .photoLibrary
         vc.delegate  = self
-       
         present (vc, animated: true)
     }
     
     @IBAction func sendRegistrationForm(_ sender: Any) {
       
         if let email = emailTextField.text , let password = passwordTextField.text, let confirmPassword = confirmPasswordTextField.text ,
-           let username = usernameTextField.text, !email.isEmpty , !password.isEmpty, !confirmPassword.isEmpty, !username.isEmpty {
+           let username = usernameTextField.text, !email.isEmpty , !password.isEmpty, !confirmPassword.isEmpty, !username.isEmpty, imageView.image != nil {
             if password != confirmPassword {
                 alert("Alert", "Password dosen´t match")
                 passwordTextField.text = ""
                 confirmPasswordTextField.text = ""
             }else {
+                SVProgressHUD.show()
                 register.registerUser(email, password, username)
             }
         }else{
-            alert("Alert","Please fill all the fields")
+            alert("Alert","Please fill all the fields and load profile photo")
         }
     }
     

@@ -47,13 +47,9 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logOutButton(_ sender: Any) {
-        //profileViewModel.deleteUserInfo()
-        //self.navigationController?.popViewController(animated: true)
-      /* self.dismiss(animated: false)
-        guard   let controllerC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as?
-        LoginViewController else{ return }
-        self.present(controllerC, animated: true, completion: nil)
-       */
+        profileViewModel.deleteUserInfo()
+        SceneDelegate.shared?.setupRootControllerIfNeeded(validUser: false)
+    
     }
     
     
