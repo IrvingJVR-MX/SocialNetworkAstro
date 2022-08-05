@@ -1,12 +1,9 @@
 import Foundation
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 import UIKit
 import CoreData
 var userObject: User?
 
 public class PostDetailViewModel {
-    var db = Firestore.firestore()
     var post = [PostDetailF]()
     var notifyFetchedPost = { () -> () in}
     var fetched : Bool = false {
@@ -14,40 +11,41 @@ public class PostDetailViewModel {
             notifyFetchedPost()
         }
     }
-    
     var notifPostComment = { () -> () in}
     var postComment : Bool = false {
         didSet {
             notifyFetchedPost()
         }
     }
-    
+  
+
     func fecthData(_ id: String){
-        db.collection("PostComments").document(id).collection("comments").addSnapshotListener{ (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
-                return
-            }
-            self.post = documents.compactMap{ (QueryDocumentSnapshot) -> PostDetailF? in
-                return try? QueryDocumentSnapshot.data(as: PostDetailF.self)
-            }
-            self.fetched = true
-            self.getUserInfo()
-        }
-        
-    }
-    
-    func createComment (_ id : String, _ comment : String){
-        let postComment = PostDetailF(profilePhotoUrl: userObject?.photoUrl ?? "",  profileName: userObject?.name ?? "", comment: comment)
-        db.collection("PostComments").document(id).collection("comments").document().setData(postComment.dictionary, completion: { error in
-            if error == nil{
-                self.postComment = true
-            } else{
-                self.postComment =  false
+        FirebaseManager.shared.listenCollectionCommentsChanges(type: PostDetailF.self, postId: id, collection: .PostComments, completion: { result in
+            switch result {
+            case .success(let posts):
+                self.post = posts
+                self.getUserInfo()
+                self.fetched = true
+            case .failure(_):
+                self.fetched = false
             }
         })
         
-        
     }
+ 
+    func createComment (_ id : String, _ comment : String){
+        let postComment = PostDetailF(id: id , profilePhotoUrl: userObject?.photoUrl ?? "",  profileName: userObject?.name ?? "", comment: comment)
+        FirebaseManager.shared.addCommentToPost(document: postComment, postId: id, collection: .PostComments, completion: { result in
+            switch result {
+            case .success(_):
+                self.postComment = true
+            case .failure(_):
+                self.postComment = false
+            }
+        })
+     }
+    
+    
     
     func getUserInfo(){
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}

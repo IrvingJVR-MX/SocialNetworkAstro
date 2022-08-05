@@ -11,6 +11,7 @@ enum FirebaseCollections: String {
     case Users
     case Friends
     case Post
+    case PostComments
 }
 
 class FirebaseManager {
@@ -88,8 +89,22 @@ class FirebaseManager {
         }
     }
     
+    func listenCollectionCommentsChanges<T: Decodable>(type: T.Type, postId: String ,collection: FirebaseCollections, completion: @escaping ( Result<[T], Error>) -> Void  ) {
+        db.collection(collection.rawValue).document(postId).collection("comments").addSnapshotListener { querySnapshot, error in
+            guard error == nil else { return completion(.failure(error!)) }
+            guard let documents = querySnapshot?.documents else { return completion(.success([])) }
+            var items = [T]()
+            let json = JSONDecoder()
+            for document in documents {
+                if let data = try? JSONSerialization.data(withJSONObject: document.data(), options: []),
+                   let item = try? json.decode(type, from: data) {
+                    items.append(item)
+                }
+            }
+            completion(.success(items))
+        }
+    }
 
-    
     
     func removeFollow(userId: String, followedId : String, collection: FirebaseCollections, completion: @escaping ( Result<String, Error>) -> Void  ) {
         
@@ -135,6 +150,18 @@ class FirebaseManager {
     }
    
     
+    func addCommentToPost<T: Encodable & BaseModel >(document: T, postId: String ,collection: FirebaseCollections, completion: @escaping ( Result<T, Error>) -> Void  ) {
+        guard let itemDict = document.dict else { return completion(.failure(FirebaseErrors.ErrorToDecodeItem)) }
+        
+        db.collection(collection.rawValue).document(postId).collection("comments").document().setData(itemDict) { error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(document))
+            }
+        }
+        
+    }
     
     
     func addUser<T: Encodable & BaseModel>(document: T, collection: FirebaseCollections, userId: String, completion: @escaping ( Result<T, Error>) -> Void  ) {
