@@ -48,14 +48,14 @@ class NewPostViewController: UIViewController {
     @IBAction func addPost(_ sender: Any) {
         let title = titleTextField.text ?? ""
         let description = textView.text ?? ""
-        newPost.savePhoto(title, description)
+        newPost.addEmptyPost(title, description)
     }
     
     @IBAction func discardPost(_ sender: Any) {
         textView.text = ""
         titleTextField.text = ""
         imageView.image = nil
-      //  self.tabBarController?.selectedIndex = 0
+        self.tabBarController?.selectedIndex = 0
     }
     
 

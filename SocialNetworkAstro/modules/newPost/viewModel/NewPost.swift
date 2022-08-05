@@ -1,8 +1,6 @@
 import Foundation
-import FirebaseStorage
 import UIKit
 import CoreData
-import FirebaseFirestore
 
 public class NewPost {
     var notifyPostPosted = { () -> () in}
@@ -11,47 +9,55 @@ public class NewPost {
             notifyPostPosted ()
         }
     }
-    let storage = Storage.storage().reference()
     var imageData: Data?
     var userObject: User?
     var userID: String =  ""
-    let db = Firestore.firestore()
     var imageURL: String = ""
     var postId: String = ""
-    
-    func savePhoto(_ title:String, _ description:String){
-        postId = db.collection("Post").document().documentID
-        let timestamp = NSDate().timeIntervalSince1970
-        guard let imageDataStorage = imageData else{ return }
-        storage.child(userID + "/PhotoOfPublicacions/\(postId)/"+postId+"\(timestamp)"+".png").putData(imageDataStorage, metadata: nil, completion: { _, error in
-            guard error == nil else{
+ 
+    func addEmptyPost(_ title:String, _ description:String){
+        FirebaseManager.shared.addEmptyDocument(collection: .Post, completion: { result in
+            if result == "" {
                 print("Failed")
-                return
             }
-            self.storage.child(self.userID + "/PhotoOfPublicacions/\(self.postId)/"+self.postId+"\(timestamp)"+".png").downloadURL(completion: { url, error in
-                           guard let url = url, error == nil else{
-                               return
-                           }
-                        let path = "\(self.userID)" + "/PhotoOfPublicacions/\(self.postId)/"+"\(self.postId)"+"\(timestamp)"+".png"
-                        self.createPost(title, description, url.absoluteString, path)
-                      })
+            else{
+                self.postId = result
+                self.savePhoto(title, description)
+            }
         })
     }
+    
+    func savePhoto(_ title:String, _ description:String){
+        guard let imageDataStorage = imageData else{ return }
+        let timestamp = NSDate().timeIntervalSince1970
+        let route = userID + "/PhotoOfPublicacions/\(postId)/"+postId+"\(timestamp)"+".png"
+        FirebaseStorageManager.shared.uploadPhoto(imageData: imageDataStorage, route: route, completion: { result in
+            switch result {
+            case .success(let url):
+                self.createPost(title, description, url, route)
+            case .failure(_):
+                print("Failed")
+            }
+        })
+    }
+    
     
     
     func createPost (_ title:String, _ description:String, _ photoURL:String, _ photoPath: String) {
         let timestamp = NSDate().timeIntervalSince1970
-        let post = PostF(postId: postId,postTitle: title,  profileName: userObject?.name ?? "", profilePhotoUrl: userObject?.photoUrl ?? "" , description: description, userID: userObject?.userid ?? "" , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp, photoPath: photoPath)
-        db.collection("Post").document(postId).setData(post.dictionary, completion: { error in
-            if error == nil{
+        let post = PostF(id: postId , postId: postId,postTitle: title,  profileName: userObject?.name ?? "", profilePhotoUrl: userObject?.photoUrl ?? "" , description: description, userID: userObject?.userid ?? "" , photoURL: photoURL , CountLikes: 0, CreatedAt: timestamp, photoPath: photoPath)
+        
+        FirebaseManager.shared.addDocument(document: post, collection: .Post, completion: { result in
+            switch result {
+            case .success(_):
                 self.posted = true
-            } else{
+            case .failure(_):
                 print("error")
-            
             }
         })
     }
     
+
     
     func getUserInfo(){
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}

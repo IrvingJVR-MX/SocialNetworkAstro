@@ -1,8 +1,5 @@
 import Foundation
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 public class HomeViewModel {
-    var db = Firestore.firestore()
     var post = [PostF]()
     var originalPostList =  [PostF]()
     var notifyFetchedPost = { () -> () in}
@@ -12,19 +9,20 @@ public class HomeViewModel {
         }
     }
     
+    
     func fecthData(){
-        db.collection("Post").addSnapshotListener{ (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
+        FirebaseManager.shared.listenCollectionChanges(type: PostF.self, collection: .Post, completion: { result in
+            switch result {
+            case .success(let posts):
+                self.post = posts
+                self.originalPostList = posts
+                self.fetched = true
+            case .failure(_):
                 self.fetched = false
-                return
             }
-            self.post = documents.compactMap{ (QueryDocumentSnapshot) -> PostF? in
-                return try? QueryDocumentSnapshot.data(as: PostF.self)
-            }
-            self.originalPostList = self.post
-            self.fetched = true
-        }
-    }
+        })
+     }
+    
     
     func filterPost(_ title :String){
         post = post.filter({$0.postTitle.lowercased().contains(title.lowercased())})

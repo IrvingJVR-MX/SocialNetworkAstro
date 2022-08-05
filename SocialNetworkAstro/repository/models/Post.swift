@@ -1,7 +1,8 @@
 import Foundation
 
 
-public struct PostF: Codable {
+public struct PostF: Codable, BaseModel {
+    var id : String
     let postId: String
     let postTitle: String
     let profileName : String
@@ -14,6 +15,7 @@ public struct PostF: Codable {
     let photoPath: String
 
     enum CodingKeys: String, CodingKey {
+        case id
         case postId
         case postTitle
         case profileName
@@ -29,4 +31,11 @@ public struct PostF: Codable {
             let data = (try? JSONEncoder().encode(self)) ?? Data()
             return (try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]) ?? [:]
         }
+    static func == (lhs: PostF, rhs: PostF) -> Bool {
+        return
+            lhs.postId == rhs.postId &&
+            lhs.postTitle == rhs.postTitle &&
+            lhs.profileName == rhs.profileName
+    }
 }
+
