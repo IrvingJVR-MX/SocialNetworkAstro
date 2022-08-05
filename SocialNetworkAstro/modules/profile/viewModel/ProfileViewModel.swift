@@ -1,13 +1,8 @@
 import Foundation
-import FirebaseFirestore
-import FirebaseStorage
-import FirebaseFirestoreSwift
 import UIKit
 import CoreData
 
 public class ProfileViewModel {
-    let storage = Storage.storage().reference()
-    var db = Firestore.firestore()
     var post = [PostF]()
     var notifyFetchedPost = { () -> () in}
     var fetched : Bool = false {
@@ -24,36 +19,46 @@ public class ProfileViewModel {
     }
     var userObject: User?
     
-    
-    
     func fecthData(){
-        db.collection("Post").whereField("userID",  isEqualTo: userObject?.userid ?? "").addSnapshotListener{ (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
+        let userId = userObject?.userid ?? ""
+        FirebaseManager.shared.listenMyPostCollectionChanges(type: PostF.self, userId: userId, collection: .Post, completion: { result in
+            switch result {
+            case .success(let postsFetched):
+                self.post = postsFetched
+                self.fetched = true
+            case .failure(_):
                 self.fetched = false
-                return
-            }
-            self.post = documents.compactMap{ (QueryDocumentSnapshot) -> PostF? in
-                return try? QueryDocumentSnapshot.data(as: PostF.self)
-            }
-            self.fetched = true
-        }
-    }
-    
-    func deletePost(_ index: Int){
-        db.collection("Post").document(post[index].postId).delete() { error in
-            if error == nil{
-               print("gooood")
-            }
-        }
-    }
-    
-    func deletePostImage(_ index: Int){
-        storage.child(post[index].photoPath).delete(completion: { error in
-            if error == nil{
-                self.deletePost(index)
             }
         })
     }
+    
+    func deletePost(_ index: Int){
+        let postId = post[index].postId
+        FirebaseManager.shared.removeDocument(documentID: postId, collection: .Post, completion: { result in
+            switch result {
+            case .success(_):
+                print("Deleted!")
+            case .failure(_):
+                print("Failed")
+            }
+        })
+    }
+    
+    
+    func deletePostImage(_ index: Int){
+         let route = post[index].photoPath
+        FirebaseStorageManager.shared.removePhoto(route: route, completion: { result in
+            switch result {
+            case true:
+                self.deletePost(index)
+            case false:
+                print("Failed")
+            }
+        })
+    }
+    
+    
+    
     
     
     func getUserInfo(){

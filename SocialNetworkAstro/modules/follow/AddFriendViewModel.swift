@@ -1,11 +1,8 @@
 import Foundation
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 import UIKit
 import CoreData
 
 public class AddFriendViewModel {
-    var db = Firestore.firestore()
     var users = [UserF]()
     var userObject: User?
     var usersFollowed = [userFollowedDetail]()
@@ -16,52 +13,62 @@ public class AddFriendViewModel {
             notifyFetchedPost()
         }
     }
+  
+    
     func fecthUsersArray(){
-        db.collection("Users").getDocuments(completion:{ (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
-                return
-            }
-            self.users = documents.compactMap{ (QueryDocumentSnapshot) -> UserF? in
-                return try? QueryDocumentSnapshot.data(as: UserF.self)
-            }
-            self.getUserInfo()
+        FirebaseManager.shared.listenCollectionChanges(type: UserF.self, collection: .Users, completion: { result in
+                switch result {
+                case .success(let usersFetched):
+                    self.users = usersFetched
+                    self.getUserInfo()
+                case .failure(_):
+                    print("error")
+                }
         })
+                                                
     }
     
     func addFollow(_ index: Int){
         let user = userFollowedDetail(id: usersToFollow[index].id, name: usersToFollow[index].name, profilePhotoUrl: usersToFollow[index].photoUrl)
-        db.collection("Users").document(userObject?.userid ?? "").collection("Friends").document(user.id).setData(user.dictionary, completion: { error in
-            if error == nil{
-                
-            } else{
+        FirebaseManager.shared.addFollow(document: user, userId: userObject?.userid ?? "", followedId: user.id, collection: .Users, completion:{ result in
+            switch result {
+            case .success(_):
+                print("Success")
+            case .failure(_):
+                print("Failed")
+            }
+        })
+    }
         
+    func unFollow(_ index: Int){
+        let userId = userObject?.userid ?? ""
+        let followedId = usersFollowed[index].id
+        FirebaseManager.shared.removeFollow(userId: userId, followedId: followedId, collection: .Users, completion: { result in
+            switch result {
+            case .success(_):
+                print("Success")
+            case .failure(_):
+                print("Failed")
             }
         })
     }
     
     
-    func unFollow(_ index: Int){
-        db.collection("Users").document(userObject?.userid ?? "").collection("Friends").document(usersFollowed[index].id).delete() { err in
-            if let err = err {
-                print("Error removing document: \(err)")
-            } else {
-                print("Document successfully removed!")
+    func fecthUserFollowedByUser(){
+        let userId =  userObject?.userid ?? ""
+        FirebaseManager.shared.listenCollectionOfFriends(type: userFollowedDetail.self, userId: userId, collection: .Users, completion: { result in
+            switch result {
+            case .success(let usersFollowedResult):
+                self.usersFollowed =  usersFollowedResult
+                self.orderUserYouMayKnow()
+            case .failure(_):
+                print("error")
             }
-        }
+            
+        })
     }
     
     
-    func fecthUserFollweByUser(){
-        db.collection("Users").document(userObject?.userid ?? "").collection("Friends").addSnapshotListener{ (querySnapshot, error) in
-            guard let documents = querySnapshot?.documents else{
-                return
-            }
-            self.usersFollowed = documents.compactMap{ (QueryDocumentSnapshot) -> userFollowedDetail? in
-                return try? QueryDocumentSnapshot.data(as: userFollowedDetail.self)
-            }
-            self.orderUserYouMayKnow()
-        }
-    }
     
     func orderUserYouMayKnow(){
         usersToFollow = users
@@ -85,7 +92,7 @@ public class AddFriendViewModel {
          }catch(let error){
              print ("error", error)
          }
-        self.fecthUserFollweByUser()
+        self.fecthUserFollowedByUser()
        }
     
 }

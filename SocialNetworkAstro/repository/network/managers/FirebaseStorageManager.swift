@@ -28,6 +28,15 @@ class FirebaseStorageManager {
         })
     }
   
-    
+    func removePhoto( route: String, completion: @escaping (Bool) -> Void) {
+        storage.child(route).delete(completion: { error in
+            if error != nil {
+                completion(false)
+            }else{
+                completion(true)
+            }
+        })
+    }
 }
+
 

@@ -33,8 +33,6 @@
 		8435C83E287C8B0800A9D108 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C83C287C8B0800A9D108 /* HomeViewController.xib */; };
 		8435C841287C8C5D00A9D108 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C83F287C8C5D00A9D108 /* ProfileViewController.swift */; };
 		8435C842287C8C5D00A9D108 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C840287C8C5D00A9D108 /* ProfileViewController.xib */; };
-		8435C848287C918300A9D108 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C846287C918300A9D108 /* TabBarViewController.swift */; };
-		8435C849287C918300A9D108 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C847287C918300A9D108 /* TabBarViewController.xib */; };
 		8435C850287C94F200A9D108 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C84E287C94F200A9D108 /* NewPostViewController.swift */; };
 		8435C851287C94F200A9D108 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C84F287C94F200A9D108 /* NewPostViewController.xib */; };
 		8435C858287C96EE00A9D108 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C856287C96EE00A9D108 /* AddFriendViewController.swift */; };
@@ -126,8 +124,6 @@
 		8435C83C287C8B0800A9D108 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		8435C83F287C8C5D00A9D108 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8435C840287C8C5D00A9D108 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
-		8435C846287C918300A9D108 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		8435C847287C918300A9D108 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		8435C84E287C94F200A9D108 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		8435C84F287C94F200A9D108 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
 		8435C856287C96EE00A9D108 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
@@ -314,7 +310,6 @@
 				84F9D7D928973E6500D508A2 /* editPost */,
 				84F9D7C0288A55AA00D508A2 /* PostDetail */,
 				8435C84A287C946000A9D108 /* newPost */,
-				8435C843287C912D00A9D108 /* tabbar */,
 				8435C837287C883E00A9D108 /* profile */,
 				8435C833287C87E600A9D108 /* home */,
 				8435C806287748CD00A9D108 /* follow */,
@@ -464,31 +459,6 @@
 				84F9D7D72895C8FD00D508A2 /* ProfileViewModel.swift */,
 			);
 			path = viewModel;
-			sourceTree = "<group>";
-		};
-		8435C843287C912D00A9D108 /* tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				8435C845287C914C00A9D108 /* controller */,
-				8435C844287C914400A9D108 /* view */,
-			);
-			path = tabbar;
-			sourceTree = "<group>";
-		};
-		8435C844287C914400A9D108 /* view */ = {
-			isa = PBXGroup;
-			children = (
-				8435C847287C918300A9D108 /* TabBarViewController.xib */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		8435C845287C914C00A9D108 /* controller */ = {
-			isa = PBXGroup;
-			children = (
-				8435C846287C918300A9D108 /* TabBarViewController.swift */,
-			);
-			path = controller;
 			sourceTree = "<group>";
 		};
 		8435C84A287C946000A9D108 /* newPost */ = {
@@ -806,7 +776,6 @@
 				8435C80C28774BE100A9D108 /* GoogleService-Info.plist in Resources */,
 				8435C859287C96EE00A9D108 /* AddFriendViewController.xib in Resources */,
 				8435C851287C94F200A9D108 /* NewPostViewController.xib in Resources */,
-				8435C849287C918300A9D108 /* TabBarViewController.xib in Resources */,
 				847034BA28764EB200D58193 /* Assets.xcassets in Resources */,
 				8435C83E287C8B0800A9D108 /* HomeViewController.xib in Resources */,
 				847034B528764EB100D58193 /* Main.storyboard in Resources */,
@@ -963,7 +932,6 @@
 				847034B028764EB100D58193 /* SceneDelegate.swift in Sources */,
 				8435C824287787A100A9D108 /* SignUpViewController.swift in Sources */,
 				8435C82A2877887500A9D108 /* Register.swift in Sources */,
-				8435C848287C918300A9D108 /* TabBarViewController.swift in Sources */,
 				84F9D7DF2897437800D508A2 /* EditPostViewModel.swift in Sources */,
 				84F9D7F3289B254F00D508A2 /* LoginViewController.swift in Sources */,
 				84F9D7D22890F07700D508A2 /* UserFollowedDetail.swift in Sources */,

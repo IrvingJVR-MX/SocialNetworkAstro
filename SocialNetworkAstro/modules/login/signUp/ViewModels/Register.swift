@@ -40,7 +40,7 @@ public class Register {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY/MM/dd"
-        let user = UserB(id: userId, name: userName, email: email, createdAt: dateFormatter.string(from: date), photoUrl: url, photoPath: path)
+        let user = UserF(id: userId, name: userName, email: email, createdAt: dateFormatter.string(from: date), photoUrl: url, photoPath: path)
         FirebaseManager.shared.addUser(document: user, collection: .Users, userId: userId, completion: { result in
             switch result {
             case .success(_):

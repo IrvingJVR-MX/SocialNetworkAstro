@@ -31,11 +31,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-f5-e3h">
-                        <rect key="frame" x="180" y="60" width="89" height="31"/>
+                        <rect key="frame" x="180" y="60" width="168" height="31"/>
                         <color key="backgroundColor" name="ColorApp"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="31" id="UQd-og-Wrm"/>
-                            <constraint firstAttribute="width" constant="89" id="UXZ-zP-iil"/>
+                            <constraint firstAttribute="width" constant="168" id="UXZ-zP-iil"/>
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
@@ -59,7 +59,7 @@
                 <outlet property="profileImageView" destination="8cT-sZ-NgV" id="vCt-I9-qsF"/>
                 <outlet property="profileNameLabel" destination="0gu-6U-uhl" id="Haq-a1-6jf"/>
             </connections>
-            <point key="canvasLocation" x="178.98550724637681" y="134.26339285714286"/>
+            <point key="canvasLocation" x="177.536231884058" y="134.26339285714286"/>
         </tableViewCell>
     </objects>
     <resources>
