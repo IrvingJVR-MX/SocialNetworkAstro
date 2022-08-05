@@ -1,12 +1,12 @@
 import UIKit
 import Kingfisher
-class AddFriendViewController: UIViewController {
+class FollowViewController: UIViewController {
 
    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    var addFriendViewModel = AddFriendViewModel()
+    var addFriendViewModel = FollowViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -37,7 +37,7 @@ class AddFriendViewController: UIViewController {
 }
 
 
-extension AddFriendViewController:  UITableViewDataSource, UITableViewDelegate {
+extension FollowViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch segmentedControl.selectedSegmentIndex {

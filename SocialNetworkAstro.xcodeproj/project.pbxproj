@@ -35,8 +35,8 @@
 		8435C842287C8C5D00A9D108 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C840287C8C5D00A9D108 /* ProfileViewController.xib */; };
 		8435C850287C94F200A9D108 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C84E287C94F200A9D108 /* NewPostViewController.swift */; };
 		8435C851287C94F200A9D108 /* NewPostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C84F287C94F200A9D108 /* NewPostViewController.xib */; };
-		8435C858287C96EE00A9D108 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C856287C96EE00A9D108 /* AddFriendViewController.swift */; };
-		8435C859287C96EE00A9D108 /* AddFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C857287C96EE00A9D108 /* AddFriendViewController.xib */; };
+		8435C858287C96EE00A9D108 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C856287C96EE00A9D108 /* FollowViewController.swift */; };
+		8435C859287C96EE00A9D108 /* FollowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8435C857287C96EE00A9D108 /* FollowViewController.xib */; };
 		8435C85B287CA46900A9D108 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C85A287CA46900A9D108 /* FirebaseManager.swift */; };
 		8435C85E287CA62900A9D108 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C85C287CA62800A9D108 /* User.swift */; };
 		8435C85F287CA62900A9D108 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8435C85D287CA62900A9D108 /* BaseModel.swift */; };
@@ -60,7 +60,7 @@
 		84F9D7C8288A6C7D00D508A2 /* PostDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7C6288A6C7D00D508A2 /* PostDetailTableViewCell.xib */; };
 		84F9D7CC288F81E200D508A2 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7CA288F81E200D508A2 /* FriendTableViewCell.swift */; };
 		84F9D7CD288F81E200D508A2 /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7CB288F81E200D508A2 /* FriendTableViewCell.xib */; };
-		84F9D7D02890ED1F00D508A2 /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */; };
+		84F9D7D02890ED1F00D508A2 /* FollowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7CF2890ED1F00D508A2 /* FollowViewModel.swift */; };
 		84F9D7D22890F07700D508A2 /* UserFollowedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7D12890F07700D508A2 /* UserFollowedDetail.swift */; };
 		84F9D7D52895C4DC00D508A2 /* ProfilePostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */; };
 		84F9D7D62895C4DC00D508A2 /* ProfilePostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */; };
@@ -126,8 +126,8 @@
 		8435C840287C8C5D00A9D108 /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		8435C84E287C94F200A9D108 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		8435C84F287C94F200A9D108 /* NewPostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPostViewController.xib; sourceTree = "<group>"; };
-		8435C856287C96EE00A9D108 /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
-		8435C857287C96EE00A9D108 /* AddFriendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFriendViewController.xib; sourceTree = "<group>"; };
+		8435C856287C96EE00A9D108 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		8435C857287C96EE00A9D108 /* FollowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowViewController.xib; sourceTree = "<group>"; };
 		8435C85A287CA46900A9D108 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8435C85C287CA62800A9D108 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8435C85D287CA62900A9D108 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		84F9D7C6288A6C7D00D508A2 /* PostDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailTableViewCell.xib; sourceTree = "<group>"; };
 		84F9D7CA288F81E200D508A2 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		84F9D7CB288F81E200D508A2 /* FriendTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
-		84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
+		84F9D7CF2890ED1F00D508A2 /* FollowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewModel.swift; sourceTree = "<group>"; };
 		84F9D7D12890F07700D508A2 /* UserFollowedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFollowedDetail.swift; sourceTree = "<group>"; };
 		84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostTableViewCell.swift; sourceTree = "<group>"; };
 		84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePostTableViewCell.xib; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				84F9D7CE288F81F600D508A2 /* cell */,
-				8435C857287C96EE00A9D108 /* AddFriendViewController.xib */,
+				8435C857287C96EE00A9D108 /* FollowViewController.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -314,7 +314,7 @@
 		8405BFA0289D60F10005E368 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */,
+				84F9D7CF2890ED1F00D508A2 /* FollowViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 		8405BFA1289D60F90005E368 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				8435C856287C96EE00A9D108 /* AddFriendViewController.swift */,
+				8435C856287C96EE00A9D108 /* FollowViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -878,7 +878,7 @@
 				84F9D7DD28973E8C00D508A2 /* EditPostViewController.xib in Resources */,
 				84F9D7C8288A6C7D00D508A2 /* PostDetailTableViewCell.xib in Resources */,
 				8435C80C28774BE100A9D108 /* GoogleService-Info.plist in Resources */,
-				8435C859287C96EE00A9D108 /* AddFriendViewController.xib in Resources */,
+				8435C859287C96EE00A9D108 /* FollowViewController.xib in Resources */,
 				8435C851287C94F200A9D108 /* NewPostViewController.xib in Resources */,
 				847034BA28764EB200D58193 /* Assets.xcassets in Resources */,
 				8435C83E287C8B0800A9D108 /* HomeViewController.xib in Resources */,
@@ -1025,8 +1025,8 @@
 				8435C85B287CA46900A9D108 /* FirebaseManager.swift in Sources */,
 				8435C83D287C8B0800A9D108 /* HomeViewController.swift in Sources */,
 				8435C85E287CA62900A9D108 /* User.swift in Sources */,
-				8435C858287C96EE00A9D108 /* AddFriendViewController.swift in Sources */,
-				84F9D7D02890ED1F00D508A2 /* AddFriendViewModel.swift in Sources */,
+				8435C858287C96EE00A9D108 /* FollowViewController.swift in Sources */,
+				84F9D7D02890ED1F00D508A2 /* FollowViewModel.swift in Sources */,
 				847034AE28764EB100D58193 /* AppDelegate.swift in Sources */,
 				8435C841287C8C5D00A9D108 /* ProfileViewController.swift in Sources */,
 				84CDEC452881031800D4111A /* Post.swift in Sources */,

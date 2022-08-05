@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
             createNavController(for: NewPostViewController(), title: "New Post", image: UIImage(systemName: "plus.app.fill")!),
             
-            createNavController(for: AddFriendViewController(), title: "Follow", image: UIImage(systemName: "person.fill.badge.plus")!),
+            createNavController(for: FollowViewController(), title: "Follow", image: UIImage(systemName: "person.fill.badge.plus")!),
             
             createNavController(for: ProfileViewController(), title: "Profile", image: UIImage(systemName: "person.fill")!)
         ]

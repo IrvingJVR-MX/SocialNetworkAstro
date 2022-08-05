@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import CoreData
 
-public class AddFriendViewModel {
+public class FollowViewModel {
     var users = [UserF]()
     var userObject: User?
     var usersFollowed = [userFollowedDetail]()
