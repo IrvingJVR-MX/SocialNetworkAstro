@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -13,6 +14,7 @@ class EditProfileViewController: UIViewController {
         usernameTextField.text = user?.name
         editProfileViewModel.notifyUpdate = { [weak self] () in
             if self?.editProfileViewModel.updated == true {
+                SVProgressHUD.dismiss()
                 self?.closeView()
             }
         }
@@ -26,6 +28,7 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func updateInfo(_ sender: Any) {
+        SVProgressHUD.show()
         editProfileViewModel.user = user
         editProfileViewModel.user?.name = usernameTextField.text ?? ""
         editProfileViewModel.updateUserInfo()

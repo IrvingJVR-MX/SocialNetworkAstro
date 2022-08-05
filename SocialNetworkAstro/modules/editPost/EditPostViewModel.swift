@@ -60,7 +60,7 @@ public class EditPostViewModel {
         FirebaseManager.shared.updatePost(title: title, description: description, postId: postId, postPhotoUrl: postPhotoUrl, photoPath: photoPath, collection: .Post, completion: { result in
             switch result {
             case true:
-                print("updated")
+                self.posted = true
             case false:
                 print("not updated")
             }

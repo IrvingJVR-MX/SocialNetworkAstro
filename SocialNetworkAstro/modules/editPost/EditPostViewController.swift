@@ -1,4 +1,5 @@
 import UIKit
+import SVProgressHUD
 class EditPostViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -14,6 +15,13 @@ class EditPostViewController: UIViewController {
             imageView.kf.setImage(with: url)
         }
         editPostViewModel.userID = post?.userID ?? ""
+        editPostViewModel.notifyPostPosted = { [weak self] () in
+            if self?.editPostViewModel.posted == true {
+                SVProgressHUD.dismiss()
+                self?.closeView()
+            }
+            
+        }
     }
 
     @IBAction func addPhotoButton(_ sender: Any) {
@@ -24,12 +32,15 @@ class EditPostViewController: UIViewController {
     }
     
     @IBAction func updateButton(_ sender: Any) {
+        SVProgressHUD.show()
         let title = titleLabel.text ?? ""
         let description = textView.text ?? ""
         editPostViewModel.savePost(title, description, post?.postId ?? "", post?.photoURL ?? "", post?.photoPath ?? "")
+        
+    }
+    func closeView(){
         _ = navigationController?.popViewController(animated: true)
     }
-    
     
 }
 
