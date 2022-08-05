@@ -221,6 +221,112 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8405BF95289D5E9C0005E368 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7E22898637400D508A2 /* EditProfileViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8405BF96289D5EA20005E368 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7E12898637400D508A2 /* EditProfileViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8405BF97289D5EB20005E368 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7E528986F4800D508A2 /* EditProfileViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8405BF98289D5ECF0005E368 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7DB28973E8C00D508A2 /* EditPostViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8405BF99289D5F150005E368 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7DA28973E8C00D508A2 /* EditPostViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8405BF9A289D5F1C0005E368 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7DE2897437800D508A2 /* EditPostViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8405BF9B289D60890005E368 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84241076288A532800CE869D /* PostDetailViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8405BF9C289D60940005E368 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7C1288A60BA00D508A2 /* PostDetailViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8405BF9D289D609D0005E368 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				84241075288A532800CE869D /* PostDetailViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8405BF9E289D60BE0005E368 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */,
+				84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		8405BF9F289D60E90005E368 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7CE288F81F600D508A2 /* cell */,
+				8435C857287C96EE00A9D108 /* AddFriendViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8405BFA0289D60F10005E368 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8405BFA1289D60F90005E368 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8435C856287C96EE00A9D108 /* AddFriendViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 		841717B72887A7EF00321BA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,10 +414,10 @@
 			children = (
 				84F9D7E02898634F00D508A2 /* editProfileInfo */,
 				84F9D7D928973E6500D508A2 /* editPost */,
-				84F9D7C0288A55AA00D508A2 /* PostDetail */,
+				84F9D7C0288A55AA00D508A2 /* postDetail */,
 				8435C84A287C946000A9D108 /* newPost */,
-				8435C837287C883E00A9D108 /* profile */,
 				8435C833287C87E600A9D108 /* home */,
+				8435C837287C883E00A9D108 /* profile */,
 				8435C806287748CD00A9D108 /* follow */,
 				8435C8042877489D00A9D108 /* login */,
 			);
@@ -340,10 +446,9 @@
 		8435C806287748CD00A9D108 /* follow */ = {
 			isa = PBXGroup;
 			children = (
-				84F9D7CE288F81F600D508A2 /* cell */,
-				8435C857287C96EE00A9D108 /* AddFriendViewController.xib */,
-				8435C856287C96EE00A9D108 /* AddFriendViewController.swift */,
-				84F9D7CF2890ED1F00D508A2 /* AddFriendViewModel.swift */,
+				8405BFA1289D60F90005E368 /* controller */,
+				8405BFA0289D60F10005E368 /* viewModel */,
+				8405BF9F289D60E90005E368 /* view */,
 			);
 			path = follow;
 			sourceTree = "<group>";
@@ -431,8 +536,6 @@
 				8435C83A287C885E00A9D108 /* viewModel */,
 				8435C839287C885400A9D108 /* view */,
 				8435C838287C884B00A9D108 /* controllers */,
-				84F9D7D32895C4DC00D508A2 /* ProfilePostTableViewCell.swift */,
-				84F9D7D42895C4DC00D508A2 /* ProfilePostTableViewCell.xib */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -448,6 +551,7 @@
 		8435C839287C885400A9D108 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8405BF9E289D60BE0005E368 /* cell */,
 				8435C840287C8C5D00A9D108 /* ProfileViewController.xib */,
 			);
 			path = view;
@@ -578,15 +682,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		84F9D7C0288A55AA00D508A2 /* PostDetail */ = {
+		84F9D7C0288A55AA00D508A2 /* postDetail */ = {
 			isa = PBXGroup;
 			children = (
+				8405BF9D289D609D0005E368 /* controller */,
+				8405BF9C289D60940005E368 /* viewModel */,
+				8405BF9B289D60890005E368 /* view */,
 				84F9D7C9288A6C8B00D508A2 /* cell */,
-				84241076288A532800CE869D /* PostDetailViewController.xib */,
-				84241075288A532800CE869D /* PostDetailViewController.swift */,
-				84F9D7C1288A60BA00D508A2 /* PostDetailViewModel.swift */,
 			);
-			path = PostDetail;
+			path = postDetail;
 			sourceTree = "<group>";
 		};
 		84F9D7C9288A6C8B00D508A2 /* cell */ = {
@@ -610,9 +714,9 @@
 		84F9D7D928973E6500D508A2 /* editPost */ = {
 			isa = PBXGroup;
 			children = (
-				84F9D7DA28973E8C00D508A2 /* EditPostViewController.swift */,
-				84F9D7DB28973E8C00D508A2 /* EditPostViewController.xib */,
-				84F9D7DE2897437800D508A2 /* EditPostViewModel.swift */,
+				8405BF9A289D5F1C0005E368 /* viewModel */,
+				8405BF99289D5F150005E368 /* controller */,
+				8405BF98289D5ECF0005E368 /* view */,
 			);
 			path = editPost;
 			sourceTree = "<group>";
@@ -620,9 +724,9 @@
 		84F9D7E02898634F00D508A2 /* editProfileInfo */ = {
 			isa = PBXGroup;
 			children = (
-				84F9D7E12898637400D508A2 /* EditProfileViewController.swift */,
-				84F9D7E22898637400D508A2 /* EditProfileViewController.xib */,
-				84F9D7E528986F4800D508A2 /* EditProfileViewModel.swift */,
+				8405BF97289D5EB20005E368 /* viewModel */,
+				8405BF96289D5EA20005E368 /* controller */,
+				8405BF95289D5E9C0005E368 /* view */,
 			);
 			path = editProfileInfo;
 			sourceTree = "<group>";
