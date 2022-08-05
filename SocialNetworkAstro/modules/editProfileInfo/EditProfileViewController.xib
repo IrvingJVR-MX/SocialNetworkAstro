@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,11 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="editProfileViewController" customModule="SocialNetworkAstro" customModuleProvider="target">
             <connections>
-                <outlet property="confirmPasswordTextField" destination="pa9-mB-woO" id="31t-wS-HbR"/>
-                <outlet property="emailTextField" destination="Bxo-ME-7VJ" id="HI1-tn-egY"/>
                 <outlet property="imageView" destination="bPa-nO-G1S" id="ARc-Oj-dSd"/>
-                <outlet property="oldPasswordTextField" destination="cny-Xo-Afd" id="WEq-CW-86d"/>
-                <outlet property="passwordTextField" destination="Ffx-Og-9gW" id="L0D-1j-HrV"/>
                 <outlet property="usernameTextField" destination="HNE-Kt-6l3" id="XKU-5u-ICk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,7 +30,7 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYZ-no-H7A">
                     <rect key="frame" x="229" y="126" width="140" height="41"/>
-                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    <color key="backgroundColor" name="ColorApp"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="41" id="13r-SU-GGd"/>
                         <constraint firstAttribute="width" constant="140" id="v9v-go-Oli"/>
@@ -45,38 +42,18 @@
                         <action selector="addPhoto:" destination="-1" eventType="touchUpInside" id="HTk-V7-o1u"/>
                     </connections>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="49" id="qWR-Vr-oqj">
-                    <rect key="frame" x="20" y="316" width="374" height="441"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="45" id="qWR-Vr-oqj">
+                    <rect key="frame" x="20" y="316" width="374" height="112"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HNE-Kt-6l3">
-                            <rect key="frame" x="0.0" y="0.0" width="374" height="32.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bxo-ME-7VJ">
-                            <rect key="frame" x="0.0" y="81.5" width="374" height="33"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cny-Xo-Afd">
-                            <rect key="frame" x="0.0" y="163.5" width="374" height="32.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-Og-9gW">
-                            <rect key="frame" x="0.0" y="245" width="374" height="32.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pa9-mB-woO">
-                            <rect key="frame" x="0.0" y="326.5" width="374" height="33"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ua6-Jm-Npp">
-                            <rect key="frame" x="0.0" y="408.5" width="374" height="32.5"/>
-                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <rect key="frame" x="0.0" y="78.5" width="374" height="33.5"/>
+                            <color key="backgroundColor" name="ColorApp"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Update"/>
@@ -105,14 +82,11 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="ColorApp">
+            <color red="0.21176470588235294" green="0.66274509803921566" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -46,7 +46,7 @@
                             <constraint firstAttribute="width" constant="50" id="aYt-KE-0T3"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-qY-ej8">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGp-qY-ej8">
                         <rect key="frame" x="6" y="369" width="354" height="141"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>

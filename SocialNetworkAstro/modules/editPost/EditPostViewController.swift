@@ -27,7 +27,7 @@ class EditPostViewController: UIViewController {
         let title = titleLabel.text ?? ""
         let description = textView.text ?? ""
         editPostViewModel.savePost(title, description, post?.postId ?? "", post?.photoURL ?? "", post?.photoPath ?? "")
-        self.dismiss(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     

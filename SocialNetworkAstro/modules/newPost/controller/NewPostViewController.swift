@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseStorage
 import SwiftUI
+import SVProgressHUD
 class NewPostViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -15,6 +16,7 @@ class NewPostViewController: UIViewController {
         textView.delegate = self
         newPost.notifyPostPosted = { [weak self] () in
             if self?.newPost.posted == true {
+                SVProgressHUD.dismiss()
                 let alert = UIAlertController(title: "Successful", message: "Posted correctly", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                     self?.textView.text = ""
@@ -32,8 +34,10 @@ class NewPostViewController: UIViewController {
         textView.layer.borderWidth = 1
         imageView.layer.borderColor =  UIColor.lightGray.cgColor
         imageView.layer.borderWidth = 0.5
+        textView.isScrollEnabled = true
+        textView.isUserInteractionEnabled = true
+        textView.frame = CGRect(x: 10, y: 10, width: self.view.frame.width, height: 100)
 
-    
     }
     
     
@@ -46,6 +50,7 @@ class NewPostViewController: UIViewController {
     }
     
     @IBAction func addPost(_ sender: Any) {
+        SVProgressHUD.show()
         let title = titleTextField.text ?? ""
         let description = textView.text ?? ""
         newPost.addEmptyPost(title, description)

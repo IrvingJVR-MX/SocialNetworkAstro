@@ -69,7 +69,7 @@
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="rHl-Mc-LcL"/>
                                     </constraints>
                                 </view>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blR-1U-aAi">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blR-1U-aAi">
                                     <rect key="frame" x="9" y="241" width="396" height="155"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>

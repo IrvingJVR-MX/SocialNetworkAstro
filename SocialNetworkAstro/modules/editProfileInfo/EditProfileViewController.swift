@@ -3,10 +3,6 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
-    @IBOutlet weak var oldPasswordTextField: UITextField!
     var user: User?
     let editProfileViewModel = EditProfileViewModel()
     override func viewDidLoad() {
@@ -15,10 +11,9 @@ class EditProfileViewController: UIViewController {
             imageView.kf.setImage(with: url)
          }
         usernameTextField.text = user?.name
-        emailTextField.text = user?.email
         editProfileViewModel.notifyUpdate = { [weak self] () in
             if self?.editProfileViewModel.updated == true {
-                self?.dismiss(animated: true)
+                self?.closeView()
             }
         }
     }
@@ -33,8 +28,11 @@ class EditProfileViewController: UIViewController {
     @IBAction func updateInfo(_ sender: Any) {
         editProfileViewModel.user = user
         editProfileViewModel.user?.name = usernameTextField.text ?? ""
-        editProfileViewModel.user?.email = emailTextField.text ?? ""
         editProfileViewModel.updateUserInfo()
+       
+    }
+    func closeView(){
+        _ = navigationController?.popViewController(animated: true)
     }
 }
 
