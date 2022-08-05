@@ -1,9 +1,6 @@
 import Foundation
-import FirebaseAuth
-import FirebaseFirestore
 import UIKit
 import CoreData
-import AVFoundation
 
 public class Login {
     var authLogin = { () -> () in}
@@ -13,28 +10,31 @@ public class Login {
         }
     }
     var userObject: UserF?
-    var db = Firestore.firestore()
+
     func authUser (_ email: String, _ password: String){
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            if  let result = result, error == nil {
-                self.getUserInfo(result.user.uid)
-            }else {
+        AuthFirebaseManager.shared.login(email: email, password: password) { result in
+            switch result {
+            case .success(let userId):
+                self.getUserInfo(userId)
+            case .failure(_):
+                self.userID = ""
+            }
+        }
+    }
+        
+    func getUserInfo(_ userId: String){
+        FirebaseManager.shared.getOneDocument(type: UserF.self, forCollection: .Users, id: userId) { result in
+            switch result {
+            case .success(let user):
+                self.userObject = user
+                self.saveUserInfo()
+            case .failure(_):
                 self.userID = ""
             }
         }
     }
     
-    func getUserInfo(_ userId: String){
-        db.collection("Users").document(userId).getDocument { docSnapshot, error in
-            if error == nil {
-                guard let user = try? docSnapshot!.data(as: UserF.self) else { return }
-                self.userObject = user
-                self.saveUserInfo()
-            }else{
-                self.userID = ""
-            }
-        }
-    }
+
     
     func saveUserInfo () {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
@@ -60,8 +60,6 @@ public class Login {
     }
     
 
-    
-    
     func checkIfUserIsLoginIn(){
          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
          let context = appDelegate.persistentContainer.viewContext

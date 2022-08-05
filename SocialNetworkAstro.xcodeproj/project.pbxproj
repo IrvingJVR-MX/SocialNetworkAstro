@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CE686D985F9D0CF19B9F406 /* Pods_SocialNetworkAstro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C366F43EE7D96C8C60B9E5D1 /* Pods_SocialNetworkAstro.framework */; };
+		8405BF92289C8F040005E368 /* AuthFirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405BF91289C8F040005E368 /* AuthFirebaseManager.swift */; };
 		841717B528879CB100321BA7 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841717B328879CB100321BA7 /* HomeTableViewCell.swift */; };
 		841717B628879CB100321BA7 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841717B428879CB100321BA7 /* HomeTableViewCell.xib */; };
 		841717B92887A7EF00321BA7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 841717B82887A7EF00321BA7 /* FirebaseDatabase */; };
@@ -100,6 +101,7 @@
 		45096EA8F6965947037945E8 /* Pods-SocialNetworkAstroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstroTests.debug.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstroTests/Pods-SocialNetworkAstroTests.debug.xcconfig"; sourceTree = "<group>"; };
 		69E4B3A7ECA54F0225CDDE7B /* Pods-SocialNetworkAstro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstro.release.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstro/Pods-SocialNetworkAstro.release.xcconfig"; sourceTree = "<group>"; };
 		7BC09F31E58DA53800F84D54 /* Pods-SocialNetworkAstroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialNetworkAstroTests.release.xcconfig"; path = "Target Support Files/Pods-SocialNetworkAstroTests/Pods-SocialNetworkAstroTests.release.xcconfig"; sourceTree = "<group>"; };
+		8405BF91289C8F040005E368 /* AuthFirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFirebaseManager.swift; sourceTree = "<group>"; };
 		841717B328879CB100321BA7 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		841717B428879CB100321BA7 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		84241073288A00E400CE869D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				8435C85A287CA46900A9D108 /* FirebaseManager.swift */,
+				8405BF91289C8F040005E368 /* AuthFirebaseManager.swift */,
 			);
 			path = managers;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F9D7C4288A66FF00D508A2 /* PostDetail.swift in Sources */,
+				8405BF92289C8F040005E368 /* AuthFirebaseManager.swift in Sources */,
 				8435C85F287CA62900A9D108 /* BaseModel.swift in Sources */,
 				8435C7F62877480800A9D108 /* SocialNetworkAstro.xcdatamodeld in Sources */,
 				84F9D7D52895C4DC00D508A2 /* ProfilePostTableViewCell.swift in Sources */,
