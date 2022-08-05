@@ -183,6 +183,32 @@ class FirebaseManager {
         })
     }
     
+    
+    func updatePost(title:String, description:String, postId: String, postPhotoUrl: String, photoPath: String, collection: FirebaseCollections, completion: @escaping (Bool) -> Void  ) {
+        let userRef = db.collection(collection.rawValue).document(postId)
+        if postPhotoUrl == "" {
+            userRef.updateData(["postTitle": title ,"description": description]) { (error) in
+                   if error == nil {
+                       completion(true)
+                   }else{
+                       completion(false)
+                   }
+               }
+        } else{
+            userRef.updateData(["postTitle": title ,"description": description, "photoURL": postPhotoUrl, "photoPath": photoPath]) { (error) in
+                   if error == nil {
+                       completion(true)
+                   }else{
+                       completion(false)
+                   }
+               }
+        }
+        
+    }
+    
+    
+    
+    
     func addEmptyDocument(collection: FirebaseCollections, completion: @escaping (String) -> Void  ) {
         let postId = db.collection(collection.rawValue).document().documentID
         if postId == "" {
