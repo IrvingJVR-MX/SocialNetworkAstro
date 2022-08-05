@@ -23,3 +23,20 @@ public struct UserF: Codable {
         }
 }
 
+
+ struct UserB: Codable, Equatable, BaseModel {
+    var id: String
+    let name: String
+    let email: String
+    let createdAt: String
+    let photoUrl: String
+    let photoPath: String
+    
+    static func == (lhs: UserB, rhs: UserB) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.name == rhs.name &&
+            lhs.email == rhs.email
+    }
+}
+

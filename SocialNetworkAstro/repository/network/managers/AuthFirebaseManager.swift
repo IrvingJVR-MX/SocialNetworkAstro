@@ -12,7 +12,19 @@ class AuthFirebaseManager {
                 completion(.failure(error!))
             }
         }
+    }
+    
+    
+    public func registerUser(email: String, password: String, completion: @escaping ( Result<String, Error>) -> Void) {
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if  let result = result, error == nil {
+                completion(.success(result.user.uid))
+            }else {
+                completion(.failure(error!))
+            }
+        }
         
     }
+    
 }
 
