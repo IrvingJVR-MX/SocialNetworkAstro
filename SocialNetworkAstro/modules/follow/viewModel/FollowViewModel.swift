@@ -88,11 +88,12 @@ public class FollowViewModel {
              let dbUser = try context.fetch(fetchRequest)
              if dbUser[0].userid != nil {
                  userObject = dbUser[0]
+                 self.fecthUserFollowedByUser()
              }
          }catch(let error){
              print ("error", error)
          }
-        self.fecthUserFollowedByUser()
+      
        }
     
 }

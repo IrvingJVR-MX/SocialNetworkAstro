@@ -9,7 +9,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         login.authLogin = { [weak self] () in
-            self?.authenticationFinished()
+            if self?.login.userID != "" {
+                self?.authenticationFinished()
+            }
         }
     }
     
@@ -36,8 +38,6 @@ class LoginViewController: UIViewController {
     func authenticationFinished(){
         if !login.userID.isEmpty {
             SceneDelegate.shared?.setupRootControllerIfNeeded(validUser: true)
-        } else{
-            alert("Alert", "Login failed please verify password or contact administrator of the system")
         }
     }
     
